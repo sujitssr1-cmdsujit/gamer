@@ -424,43 +424,38 @@
   updateIndiaClock();
   setInterval(updateIndiaClock,1000);
 
-  // Best possible browser-safe autoplay behavior:
-  // 1) First try autoplay WITH sound.
-  // 2) If browser blocks it, immediately autoplay muted.
-  // 3) On the visitor's first interaction anywhere on the page,
-  //    automatically unmute and continue playback. No extra button shown.
+  // Unmuted-first playback.
+  // This page never sets the video to muted.
+  // If the browser permits unmuted autoplay, it starts immediately with sound.
+  // If the browser blocks unmuted autoplay, playback may remain paused until user interaction.
   const video = document.getElementById("mainVideo");
 
-  async function startVideo(){
-    video.volume = 1;
-    video.muted = false;
+  video.muted = false;
+  video.defaultMuted = false;
+  video.volume = 1;
 
-    try{
-      await video.play(); // works with sound only if browser allows it
-    }catch(e){
-      video.muted = true;
-      try{
-        await video.play(); // muted autoplay is broadly allowed
-      }catch(err){}
-    }
-  }
-
-  window.addEventListener("load", startVideo);
-
-  let unlocked = false;
-  async function unlockSound(){
-    if(unlocked) return;
-    unlocked = true;
-
+  async function startUnmuted(){
     try{
       video.muted = false;
       video.volume = 1;
       await video.play();
-    }catch(e){}
+    }catch(e){
+      // Intentionally do NOT fall back to muted playback.
+      // Modern browsers may require a user gesture for sound.
+    }
   }
 
+  window.addEventListener("load", startUnmuted);
+
+  // If the user interacts anywhere for any reason, immediately ensure sound is on.
   ["pointerdown","touchstart","click","keydown"].forEach(evt=>{
-    document.addEventListener(evt, unlockSound, {once:true, passive:true});
+    document.addEventListener(evt, async ()=>{
+      try{
+        video.muted = false;
+        video.volume = 1;
+        await video.play();
+      }catch(e){}
+    }, {once:true, passive:true});
   });
 
   const names = [
