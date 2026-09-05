@@ -130,6 +130,57 @@
       background:#000;
     }
 
+    .hero-cta-wrap{
+      margin:14px 0 8px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-install{
+      position:relative;
+      overflow:hidden;
+      display:block;
+      width:100%;
+      text-align:center;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(135deg,#21df6b,#11b84c);
+      padding:21px 18px;
+      border-radius:18px;
+      font-size:clamp(23px,6vw,35px);
+      font-weight:950;
+      letter-spacing:.3px;
+      box-shadow:
+        0 12px 30px rgba(32,217,107,.38),
+        0 0 0 2px rgba(255,255,255,.05);
+      animation:ctaPulse 2.1s ease-in-out infinite;
+    }
+
+    .hero-install:before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-130%;
+      width:80%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+      animation:shine 2.8s infinite;
+    }
+
+    .hero-install small{
+      display:block;
+      font-size:12px;
+      font-weight:800;
+      margin-top:4px;
+      opacity:.9;
+      letter-spacing:.2px;
+    }
+
+    @keyframes ctaPulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.012)}
+    }
+
     .product-card{
       margin-top:22px;
       background:
@@ -354,6 +405,18 @@
     </video>
   </div>
 
+  <div class="hero-cta-wrap">
+    <a
+      id="heroInstallBtn"
+      class="hero-install"
+      href="https://1024terabox.com/s/18Magj5s3cXjLdNodBZQ8iQ"
+      target="_blank"
+      rel="noopener noreferrer">
+      ↓ INSTALL NOW
+      <small>Tap to open download</small>
+    </a>
+  </div>
+
   <section class="product-card">
     <div class="premium">NEW PREMIUM</div>
 
@@ -379,14 +442,6 @@
       <span>4.9 / 5</span>
     </div>
 
-    <a
-      id="installBtn"
-      class="install"
-      href="https://1024terabox.com/s/18Magj5s3cXjLdNodBZQ8iQ"
-      target="_blank"
-      rel="noopener noreferrer">
-      ↓ INSTALL NOW
-    </a>
   </section>
 
   <div class="section-title">Activity Preview</div>
@@ -506,7 +561,7 @@
 
   scheduleNext();
 
-  document.getElementById("installBtn").addEventListener("click",()=>{
+  document.getElementById("heroInstallBtn").addEventListener("click",()=>{
     const row = document.createElement("div");
     row.className = "activity blue";
     row.innerHTML = `
