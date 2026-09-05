@@ -1,210 +1,307 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0f1115" />
-  <title>Download Landing Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>OB55 VIP PROXY SERVER</title>
+
   <style>
     :root{
-      --bg:#f6f7f9;
-      --card:#ffffff;
-      --text:#171717;
+      --bg:#f4f4f4;
+      --text:#111;
       --muted:#666;
-      --green:#18a84f;
+      --green:#19ad4f;
       --yellow:#ffd900;
-      --line:#e8e8e8;
-      --shadow:0 12px 30px rgba(0,0,0,.12);
-      --radius:20px;
+      --line:#e7e7e7;
+      --shadow:0 10px 28px rgba(0,0,0,.12);
+      --max:760px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     }
-    .topbar{
-      position:sticky;top:0;z-index:10;
-      background:#101318;color:#fff;
-      padding:14px 18px;
-      display:flex;justify-content:center;align-items:center;
-      box-shadow:0 2px 12px rgba(0,0,0,.18);
+    .page{width:min(100%,var(--max));margin:auto;padding:16px 14px 36px}
+    .top-card{
+      background:#fff;border:1px solid var(--line);border-radius:15px;
+      padding:12px 14px;margin-bottom:18px
     }
-    .topbar strong{font-size:15px}
-    .wrap{max-width:760px;margin:0 auto;padding:22px 16px 40px}
-    .notice{
-      text-align:center;background:#fff;border:1px solid var(--line);
-      border-radius:14px;padding:12px 14px;margin-bottom:22px;font-weight:700;
+    .top-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .notice{font-weight:900}
+    .clock-wrap{text-align:right}
+    .clock{font-weight:900;font-variant-numeric:tabular-nums}
+    .date{color:var(--muted);font-size:12px;margin-top:3px;font-weight:700}
+    h1{
+      text-align:center;margin:8px 0 18px;
+      font-size:clamp(30px,7vw,52px);line-height:1;font-weight:950
     }
-    h1{text-align:center;font-size:clamp(30px,7vw,48px);margin:12px 0 18px}
     .video-shell{
-      background:#000;border-radius:var(--radius);overflow:hidden;
-      box-shadow:var(--shadow);aspect-ratio:16/9;
+      position:relative;width:100%;aspect-ratio:16/9;background:#000;
+      border-radius:20px;overflow:hidden;box-shadow:var(--shadow)
     }
-    .video-shell iframe,.video-shell video{
-      width:100%;height:100%;border:0;display:block;background:#000;
-    }
+    .video-shell iframe{width:100%;height:100%;border:0;display:block;background:#000}
     .badge{
-      width:max-content;margin:28px auto 6px;
-      background:var(--yellow);padding:9px 22px;border-radius:999px;
-      font-weight:800;font-size:14px;
+      width:max-content;margin:24px auto 10px;padding:10px 24px;
+      border-radius:999px;background:var(--yellow);font-weight:900
     }
     .product{text-align:center}
-    .product h2{font-size:clamp(32px,7vw,52px);margin:6px 0}
-    .product p{color:var(--muted);font-weight:650;margin:0 0 16px}
-    .rating{display:flex;justify-content:center;gap:16px;align-items:center;margin:12px 0 26px}
-    .stars{color:#f5ad00;font-size:28px;letter-spacing:2px}
-    .download-btn{
+    .product h2{
+      margin:4px 0 0;font-size:clamp(30px,7vw,50px);
+      font-weight:950;line-height:1.05
+    }
+    .subtitle{
+      color:var(--muted);font-weight:700;margin:10px 0 14px;
+      font-size:clamp(14px,3.7vw,19px)
+    }
+    .rating{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0 24px}
+    .stars{color:#f1aa00;font-size:30px;letter-spacing:2px}
+    .install{
       display:block;width:100%;text-align:center;text-decoration:none;
-      background:var(--green);color:#fff;font-weight:900;
-      font-size:clamp(22px,5vw,32px);padding:22px 18px;border-radius:16px;
-      box-shadow:0 10px 22px rgba(24,168,79,.28);
-      transition:.18s transform,.18s filter;
+      background:var(--green);color:#fff;padding:22px 18px;border-radius:18px;
+      font-size:clamp(22px,6vw,34px);font-weight:950;
+      box-shadow:0 10px 24px rgba(25,173,79,.28)
     }
-    .download-btn:hover{filter:brightness(.96);transform:translateY(-1px)}
-    .download-btn:active{transform:translateY(1px)}
-    .section-title{font-size:26px;margin:38px 0 12px}
-    .comments{display:grid;gap:12px}
-    .comment{
-      background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;
+    .section-title{font-size:clamp(24px,6vw,38px);font-weight:950;margin:30px 0 12px}
+    .activity{
+      border-radius:18px;
+      padding:15px 16px;
+      margin-bottom:11px;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 7px 18px rgba(0,0,0,.08);
+      overflow:hidden;
     }
-    .comment b{display:block;margin-bottom:4px}
-    .small-note{
-      margin-top:24px;text-align:center;color:#777;font-size:13px;line-height:1.5
+    .activity b{
+      display:block;
+      margin-bottom:7px;
+      font-size:18px;
+      color:#111;
     }
-    @media (max-width:520px){
-      .wrap{padding-left:12px;padding-right:12px}
-      .download-btn{padding:18px 14px}
-      .notice{font-size:14px}
+    .activity small{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:7px;
+      font-size:14px;
+      font-weight:800;
+      color:#222;
     }
+    .time-pill{
+      display:inline-block;
+      background:rgba(255,255,255,.78);
+      padding:5px 9px;
+      border-radius:999px;
+      color:#444;
+      font-weight:800;
+    }
+    .status-pill{
+      display:inline-block;
+      padding:6px 11px;
+      border-radius:999px;
+      font-weight:950;
+      letter-spacing:.1px;
+    }
+
+    .status-download{
+      background:linear-gradient(135deg,#dff4ff,#aee4ff);
+    }
+    .status-download .status-pill{
+      color:#005e9c;
+      background:#c8ecff;
+    }
+
+    .status-success{
+      background:linear-gradient(135deg,#e4ffe9,#bff5ca);
+    }
+    .status-success .status-pill{
+      color:#087d32;
+      background:#c9f7d4;
+    }
+
+    .status-install{
+      background:linear-gradient(135deg,#fff0dc,#ffd7aa);
+    }
+    .status-install .status-pill{
+      color:#a65200;
+      background:#ffe1bf;
+    }
+
+    .status-setup{
+      background:linear-gradient(135deg,#efe4ff,#d8c0ff);
+    }
+    .status-setup .status-pill{
+      color:#6c2db6;
+      background:#e1ccff;
+    }
+
+    .status-link{
+      background:linear-gradient(135deg,#dcfff9,#b5f4e7);
+    }
+    .status-link .status-pill{
+      color:#067c69;
+      background:#c8f8ef;
+    }
+
+    .status-complete{
+      background:linear-gradient(135deg,#ffe1f2,#ffc0e1);
+    }
+    .status-complete .status-pill{
+      color:#a61e64;
+      background:#ffd0e8;
+    }
+    .foot{text-align:center;color:#777;font-size:12px;margin-top:18px;line-height:1.45}
   </style>
 </head>
-<body>
 
-  <div class="topbar">
-    <strong id="siteName">Your Website</strong>
+<body>
+<main class="page">
+
+  <div class="top-card">
+    <div class="top-line">
+      <div class="notice">⚡ OB55 VIP PROXY SERVER</div>
+      <div class="clock-wrap">
+        <div class="clock" id="indiaClock">--:--:--</div>
+        <div class="date" id="indiaDate"></div>
+      </div>
+    </div>
   </div>
 
-  <main class="wrap">
-    <div class="notice" id="noticeText">⚡ Fast & Secure Download</div>
+  <h1>WATCH FULL VIDEO</h1>
 
-    <h1 id="heroTitle">WATCH FULL VIDEO</h1>
+  <div class="video-shell">
+    <!-- IMPORTANT:
+         This is a normal YouTube embed, not a direct /embed URL opened by itself.
+         GitHub Pages should provide the HTTP Referer YouTube requires. -->
+    <iframe
+      src="https://www.youtube.com/embed/fCCL0IJS8oU?autoplay=1&mute=0&loop=1&playlist=fCCL0IJS8oU&playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=https%3A%2F%2Fsujitssr1-cmdsujit.github.io"
+      title="OB55 VIP PROXY SERVER video"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-    <div class="video-shell" id="videoBox">
-      <!-- Video JavaScript se yahan load hoga -->
+  <div class="badge">NEW PREMIUM</div>
+
+  <section class="product">
+    <h2>OB55 VIP PROXY SERVER</h2>
+    <div class="subtitle">Fast access • video guide • download page</div>
+
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span>4.9 / 5</span>
     </div>
 
-    <div class="badge" id="badgeText">NEW VERSION</div>
+    <a
+      id="installBtn"
+      class="install"
+      href="https://1024terabox.com/s/18Magj5s3cXjLdNodBZQ8iQ"
+      target="_blank"
+      rel="noopener noreferrer">
+      ↓ INSTALL NOW
+    </a>
+  </section>
 
-    <section class="product">
-      <h2 id="productTitle">WhatsApp</h2>
-      <p id="productSubtitle">Official download page</p>
+  <div class="section-title">Demo Activity</div>
+  <div id="activityList"></div>
 
-      <div class="rating">
-        <span class="stars">★★★★★</span>
-        <span>4.9 / 5</span>
-      </div>
+  <div class="foot">
+    Demo activity is simulated for design preview only. For real user activity, connect the page to a backend/database.
+  </div>
 
-      <a
-        id="installButton"
-        class="download-btn"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-      >↓ INSTALL NOW</a>
-    </section>
+</main>
 
-    <h3 class="section-title">Live Comments</h3>
-    <div class="comments">
-      <div class="comment"><b>Arjun</b>🔥 Download page worked perfectly!</div>
-      <div class="comment"><b>Vikas</b>⚡ Fast and simple.</div>
-      <div class="comment"><b>Mohit</b>🛡️ Official link opened successfully.</div>
-      <div class="comment"><b>Harsh</b>✅ Installed successfully.</div>
-    </div>
+<script>
+  const demoNames = [
+    "Aman","Rahul","Vikas","Arjun","Mohit","Harsh","Ankit","Rohan",
+    "Saurabh","Deepak","Manish","Abhishek","Ravi","Sachin","Pankaj","Nitin"
+  ];
 
-    <div class="small-note">
-      Always link to software you are authorized to distribute. For apps such as WhatsApp,
-      prefer the official download page rather than unofficial APK mirrors.
-    </div>
-  </main>
+  const demoActions = [
+    {text:"⬇ Downloading started", cls:"status-download"},
+    {text:"✅ Installed successfully", cls:"status-success"},
+    {text:"📦 Install started", cls:"status-install"},
+    {text:"⚙ Setup opened", cls:"status-setup"},
+    {text:"🔗 Download link opened", cls:"status-link"},
+    {text:"🎉 Setup completed", cls:"status-complete"}
+  ];
 
-  <script>
-    /* ===========================
-       EDIT ONLY THIS CONFIG BLOCK
-       =========================== */
-    const CONFIG = {
-      siteName: "Sujit Downloads",
-      noticeText: "⚡ Official App Download",
-      heroTitle: "WATCH FULL VIDEO",
+  function updateIndiaClock(){
+    const now = new Date();
 
-      badgeText: "NEW VERSION",
-      productTitle: "WhatsApp",
-      productSubtitle: "Official download page",
+    document.getElementById("indiaClock").textContent =
+      new Intl.DateTimeFormat("en-IN",{
+        timeZone:"Asia/Kolkata",
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit",
+        hour12:true
+      }).format(now) + " IST";
 
-      // YouTube example:
-      // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      //
-      // Direct MP4 example:
-      // videoUrl: "https://example.com/video.mp4",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    document.getElementById("indiaDate").textContent =
+      new Intl.DateTimeFormat("en-IN",{
+        timeZone:"Asia/Kolkata",
+        weekday:"short",
+        day:"2-digit",
+        month:"short",
+        year:"numeric"
+      }).format(now);
+  }
 
-      // Replace with your official / authorized download URL:
-      installUrl: "https://www.whatsapp.com/download"
-    };
+  updateIndiaClock();
+  setInterval(updateIndiaClock,1000);
 
-    document.getElementById("siteName").textContent = CONFIG.siteName;
-    document.getElementById("noticeText").textContent = CONFIG.noticeText;
-    document.getElementById("heroTitle").textContent = CONFIG.heroTitle;
-    document.getElementById("badgeText").textContent = CONFIG.badgeText;
-    document.getElementById("productTitle").textContent = CONFIG.productTitle;
-    document.getElementById("productSubtitle").textContent = CONFIG.productSubtitle;
-    document.getElementById("installButton").href = CONFIG.installUrl;
+  const activityList = document.getElementById("activityList");
 
-    function getYouTubeId(url){
-      try{
-        const u = new URL(url);
-        if(u.hostname.includes("youtu.be")) return u.pathname.slice(1);
-        if(u.hostname.includes("youtube.com")){
-          if(u.pathname.startsWith("/shorts/")) return u.pathname.split("/")[2];
-          return u.searchParams.get("v");
-        }
-      }catch(e){}
-      return null;
+  function addDemoActivity(){
+    const name = demoNames[Math.floor(Math.random()*demoNames.length)];
+    const action = demoActions[Math.floor(Math.random()*demoActions.length)];
+    const seconds = Math.floor(Math.random()*9)+4;
+
+    const row = document.createElement("div");
+    row.className = "activity " + action.cls;
+    row.innerHTML = `
+      <b>${name}</b>
+      <small>
+        <span class="time-pill">${seconds} sec ago</span>
+        <span class="status-pill">${action.text}</span>
+      </small>`;
+
+    activityList.prepend(row);
+
+    while(activityList.children.length > 6){
+      activityList.removeChild(activityList.lastElementChild);
     }
+  }
 
-    function renderVideo(url){
-      const box = document.getElementById("videoBox");
-      const yt = getYouTubeId(url);
+  // Fill initial demo rows
+  for(let i=0;i<5;i++) addDemoActivity();
 
-      if(yt){
-        box.innerHTML = `
-          <iframe
-            src="https://www.youtube.com/embed/${yt}"
-            title="Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>`;
-        return;
-      }
+  // Add a new demo row every 6–10 seconds
+  function scheduleNext(){
+    const delay = 6000 + Math.floor(Math.random()*4000);
+    setTimeout(()=>{
+      addDemoActivity();
+      scheduleNext();
+    }, delay);
+  }
+  scheduleNext();
 
-      if(/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)){
-        box.innerHTML = `
-          <video controls playsinline preload="metadata">
-            <source src="${url}">
-            Your browser does not support HTML5 video.
-          </video>`;
-        return;
-      }
-
-      box.innerHTML = `
-        <div style="height:100%;display:grid;place-items:center;color:white;padding:24px;text-align:center">
-          Video URL invalid hai. CONFIG me YouTube ya direct MP4 URL paste karein.
-        </div>`;
-    }
-
-    renderVideo(CONFIG.videoUrl);
-  </script>
+  // Real local event: this visitor's own Install-button click
+  document.getElementById("installBtn").addEventListener("click",()=>{
+    const row = document.createElement("div");
+    row.className = "activity status-download";
+    row.innerHTML = `
+      <b>You</b>
+      <small>
+        <span class="time-pill">just now</span>
+        <span class="status-pill">⬇ Downloading started</span>
+      </small>`;
+    activityList.prepend(row);
+  });
+</script>
 </body>
 </html>
