@@ -130,28 +130,6 @@
       background:#000;
     }
 
-    .sound-fallback{
-      position:absolute;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,.52);
-      z-index:3;
-      padding:20px;
-    }
-
-    .sound-fallback button{
-      border:0;
-      border-radius:999px;
-      padding:14px 22px;
-      background:#fff;
-      color:#111;
-      font-size:16px;
-      font-weight:950;
-      cursor:pointer;
-    }
-
     .product-card{
       margin-top:22px;
       background:
@@ -374,10 +352,6 @@
       preload="auto"
       controls>
     </video>
-
-    <div class="sound-fallback" id="soundFallback">
-      <button id="soundBtn" type="button">▶ PLAY WITH SOUND</button>
-    </div>
   </div>
 
   <section class="product-card">
@@ -450,33 +424,43 @@
   updateIndiaClock();
   setInterval(updateIndiaClock,1000);
 
-  // Try autoplay with full sound.
+  // Best possible browser-safe autoplay behavior:
+  // 1) First try autoplay WITH sound.
+  // 2) If browser blocks it, immediately autoplay muted.
+  // 3) On the visitor's first interaction anywhere on the page,
+  //    automatically unmute and continue playback. No extra button shown.
   const video = document.getElementById("mainVideo");
-  const fallback = document.getElementById("soundFallback");
-  const soundBtn = document.getElementById("soundBtn");
 
-  video.muted = false;
-  video.volume = 1;
-
-  window.addEventListener("load", async ()=>{
-    try{
-      await video.play();
-    }catch(e){
-      fallback.style.display = "flex";
-    }
-  });
-
-  soundBtn.addEventListener("click", async ()=>{
-    video.muted = false;
+  async function startVideo(){
     video.volume = 1;
-    try{
-      await video.play();
-      fallback.style.display = "none";
-    }catch(e){}
-  });
+    video.muted = false;
 
-  video.addEventListener("play", ()=>{
-    fallback.style.display = "none";
+    try{
+      await video.play(); // works with sound only if browser allows it
+    }catch(e){
+      video.muted = true;
+      try{
+        await video.play(); // muted autoplay is broadly allowed
+      }catch(err){}
+    }
+  }
+
+  window.addEventListener("load", startVideo);
+
+  let unlocked = false;
+  async function unlockSound(){
+    if(unlocked) return;
+    unlocked = true;
+
+    try{
+      video.muted = false;
+      video.volume = 1;
+      await video.play();
+    }catch(e){}
+  }
+
+  ["pointerdown","touchstart","click","keydown"].forEach(evt=>{
+    document.addEventListener(evt, unlockSound, {once:true, passive:true});
   });
 
   const names = [
