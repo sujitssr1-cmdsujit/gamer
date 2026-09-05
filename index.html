@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f1115" />
+  <title>Download Landing Page</title>
+  <style>
+    :root{
+      --bg:#f6f7f9;
+      --card:#ffffff;
+      --text:#171717;
+      --muted:#666;
+      --green:#18a84f;
+      --yellow:#ffd900;
+      --line:#e8e8e8;
+      --shadow:0 12px 30px rgba(0,0,0,.12);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:#101318;color:#fff;
+      padding:14px 18px;
+      display:flex;justify-content:center;align-items:center;
+      box-shadow:0 2px 12px rgba(0,0,0,.18);
+    }
+    .topbar strong{font-size:15px}
+    .wrap{max-width:760px;margin:0 auto;padding:22px 16px 40px}
+    .notice{
+      text-align:center;background:#fff;border:1px solid var(--line);
+      border-radius:14px;padding:12px 14px;margin-bottom:22px;font-weight:700;
+    }
+    h1{text-align:center;font-size:clamp(30px,7vw,48px);margin:12px 0 18px}
+    .video-shell{
+      background:#000;border-radius:var(--radius);overflow:hidden;
+      box-shadow:var(--shadow);aspect-ratio:16/9;
+    }
+    .video-shell iframe,.video-shell video{
+      width:100%;height:100%;border:0;display:block;background:#000;
+    }
+    .badge{
+      width:max-content;margin:28px auto 6px;
+      background:var(--yellow);padding:9px 22px;border-radius:999px;
+      font-weight:800;font-size:14px;
+    }
+    .product{text-align:center}
+    .product h2{font-size:clamp(32px,7vw,52px);margin:6px 0}
+    .product p{color:var(--muted);font-weight:650;margin:0 0 16px}
+    .rating{display:flex;justify-content:center;gap:16px;align-items:center;margin:12px 0 26px}
+    .stars{color:#f5ad00;font-size:28px;letter-spacing:2px}
+    .download-btn{
+      display:block;width:100%;text-align:center;text-decoration:none;
+      background:var(--green);color:#fff;font-weight:900;
+      font-size:clamp(22px,5vw,32px);padding:22px 18px;border-radius:16px;
+      box-shadow:0 10px 22px rgba(24,168,79,.28);
+      transition:.18s transform,.18s filter;
+    }
+    .download-btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+    .download-btn:active{transform:translateY(1px)}
+    .section-title{font-size:26px;margin:38px 0 12px}
+    .comments{display:grid;gap:12px}
+    .comment{
+      background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;
+    }
+    .comment b{display:block;margin-bottom:4px}
+    .small-note{
+      margin-top:24px;text-align:center;color:#777;font-size:13px;line-height:1.5
+    }
+    @media (max-width:520px){
+      .wrap{padding-left:12px;padding-right:12px}
+      .download-btn{padding:18px 14px}
+      .notice{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <strong id="siteName">Your Website</strong>
+  </div>
+
+  <main class="wrap">
+    <div class="notice" id="noticeText">⚡ Fast & Secure Download</div>
+
+    <h1 id="heroTitle">WATCH FULL VIDEO</h1>
+
+    <div class="video-shell" id="videoBox">
+      <!-- Video JavaScript se yahan load hoga -->
+    </div>
+
+    <div class="badge" id="badgeText">NEW VERSION</div>
+
+    <section class="product">
+      <h2 id="productTitle">WhatsApp</h2>
+      <p id="productSubtitle">Official download page</p>
+
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 / 5</span>
+      </div>
+
+      <a
+        id="installButton"
+        class="download-btn"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >↓ INSTALL NOW</a>
+    </section>
+
+    <h3 class="section-title">Live Comments</h3>
+    <div class="comments">
+      <div class="comment"><b>Arjun</b>🔥 Download page worked perfectly!</div>
+      <div class="comment"><b>Vikas</b>⚡ Fast and simple.</div>
+      <div class="comment"><b>Mohit</b>🛡️ Official link opened successfully.</div>
+      <div class="comment"><b>Harsh</b>✅ Installed successfully.</div>
+    </div>
+
+    <div class="small-note">
+      Always link to software you are authorized to distribute. For apps such as WhatsApp,
+      prefer the official download page rather than unofficial APK mirrors.
+    </div>
+  </main>
+
+  <script>
+    /* ===========================
+       EDIT ONLY THIS CONFIG BLOCK
+       =========================== */
+    const CONFIG = {
+      siteName: "Sujit Downloads",
+      noticeText: "⚡ Official App Download",
+      heroTitle: "WATCH FULL VIDEO",
+
+      badgeText: "NEW VERSION",
+      productTitle: "WhatsApp",
+      productSubtitle: "Official download page",
+
+      // YouTube example:
+      // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      //
+      // Direct MP4 example:
+      // videoUrl: "https://example.com/video.mp4",
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+
+      // Replace with your official / authorized download URL:
+      installUrl: "https://www.whatsapp.com/download"
+    };
+
+    document.getElementById("siteName").textContent = CONFIG.siteName;
+    document.getElementById("noticeText").textContent = CONFIG.noticeText;
+    document.getElementById("heroTitle").textContent = CONFIG.heroTitle;
+    document.getElementById("badgeText").textContent = CONFIG.badgeText;
+    document.getElementById("productTitle").textContent = CONFIG.productTitle;
+    document.getElementById("productSubtitle").textContent = CONFIG.productSubtitle;
+    document.getElementById("installButton").href = CONFIG.installUrl;
+
+    function getYouTubeId(url){
+      try{
+        const u = new URL(url);
+        if(u.hostname.includes("youtu.be")) return u.pathname.slice(1);
+        if(u.hostname.includes("youtube.com")){
+          if(u.pathname.startsWith("/shorts/")) return u.pathname.split("/")[2];
+          return u.searchParams.get("v");
+        }
+      }catch(e){}
+      return null;
+    }
+
+    function renderVideo(url){
+      const box = document.getElementById("videoBox");
+      const yt = getYouTubeId(url);
+
+      if(yt){
+        box.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${yt}"
+            title="Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>`;
+        return;
+      }
+
+      if(/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)){
+        box.innerHTML = `
+          <video controls playsinline preload="metadata">
+            <source src="${url}">
+            Your browser does not support HTML5 video.
+          </video>`;
+        return;
+      }
+
+      box.innerHTML = `
+        <div style="height:100%;display:grid;place-items:center;color:white;padding:24px;text-align:center">
+          Video URL invalid hai. CONFIG me YouTube ya direct MP4 URL paste karein.
+        </div>`;
+    }
+
+    renderVideo(CONFIG.videoUrl);
+  </script>
+</body>
+</html>
