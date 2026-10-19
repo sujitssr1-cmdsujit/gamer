@@ -48,21 +48,32 @@ body::after{content:"";position:fixed;inset:0;background:radial-gradient(ellipse
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}.marquee-track{display:flex;width:max-content;animation:mq 20s linear infinite}
 @keyframes bs{0%,100%{transform:translate(-50%,0) scale(1)}50%{transform:translate(-50%,-3px) scale(1.05)}}.bounce-soft{animation:bs 1.8s ease-in-out infinite}
 .hindi-note{font-family:'Hind','Noto Sans Devanagari',system-ui,sans-serif;font-size:12.5px;font-weight:600;line-height:1.45;color:#fff;text-align:center;background:rgba(255,197,49,.09);border:1px solid rgba(255,197,49,.45);border-radius:12px;padding:7px 10px;display:flex;align-items:center;justify-content:center;gap:7px}
-.video-box{flex:1 1 auto;min-height:0;position:relative;margin:10px 12px 0;border-radius:22px;overflow:hidden;background:#000;border:1px solid rgba(255,197,49,.35);box-shadow:0 24px 60px rgba(0,0,0,.65)}
-video{width:100%;height:100%;object-fit:contain;background:#000;display:block}video::-webkit-media-controls{display:none!important}
+/* VIDEO BOX = video ke asli ratio jitna hi (--vr JS se video ki real width/height se set hota hai). Height limit taaki screen me sab fit rahe — box khud chhota ho jata hai, ratio kabhi nahi tootta */
+.video-box{flex:0 0 auto;position:relative;margin:10px auto 0;width:min(100% - 24px, calc((100dvh - 330px) * var(--vr,1.7778)));max-width:calc(100% - 24px);aspect-ratio:var(--vr,16/9);border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(255,197,49,.35);box-shadow:0 24px 60px rgba(0,0,0,.65);transition:width .3s ease}
+video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;display:block}video::-webkit-media-controls{display:none!important}
+/* Bachi hui jagah: LIVE ACTIVITY feed */
+.feed-box{flex:1 1 auto;min-height:0;margin:0 14px max(10px,env(safe-area-inset-bottom));border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;overflow:hidden}
+.feed-head{display:flex;align-items:center;justify-content:space-between;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:9.5px;font-weight:800;letter-spacing:.14em;color:#8FA1BB;flex-shrink:0}
+.feed-list{flex:1;min-height:0;overflow:hidden;padding:5px 8px;display:flex;flex-direction:column;gap:4px}
+.feed-item{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:10px;background:rgba(255,255,255,.03);font-size:11.5px;font-weight:500;color:#C7D2E3;animation:fi .4s ease both;flex-shrink:0}
+.feed-item b{color:#fff;font-weight:700}.feed-av{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:900;color:#000;flex-shrink:0}
+.feed-time{margin-left:auto;font-size:9.5px;color:#64748B;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+@keyframes fi{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 .v-badge{position:absolute;top:10px;display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;letter-spacing:.14em;padding:6px 9px;border-radius:9px;pointer-events:none;z-index:5;transition:opacity .35s}
-.v-controls{position:absolute;left:0;right:0;bottom:0;z-index:6;padding:26px 12px 10px;background:radial-gradient(ellipse at 50% 130%,rgba(0,0,0,.88) 55%,rgba(0,0,0,0) 100%);transition:opacity .35s}
-.video-box.playing .v-controls,.video-box.playing .v-badge{opacity:0;pointer-events:none}
-.v-btn{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;cursor:pointer;flex-shrink:0}
-.sound-fab{position:absolute;top:10px;right:10px;z-index:9;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;transition:.2s}
-.sound-fab.on{background:#22C55E;color:#03140A;border-color:#22C55E}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;background:rgba(255,255,255,.25);outline:none;cursor:pointer}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:99px;background:#FFC531;border:2px solid #000}
+.v-controls{position:absolute;left:0;right:0;bottom:0;z-index:6;padding:18px 0 0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0));display:flex;align-items:flex-end}
+.video-box.playing .v-badge{opacity:0;pointer-events:none}
+input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:14px;margin:0;background:transparent;outline:none;cursor:pointer;touch-action:none}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:0;background:linear-gradient(to right,#22C55E 0%,#22C55E var(--p,0%),rgba(255,255,255,.28) var(--p,0%),rgba(255,255,255,.28) 100%)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:99px;background:#fff;border:2px solid #22C55E;box-shadow:0 0 10px rgba(34,197,94,.9)}
+input[type=range]::-moz-range-track{height:4px;background:rgba(255,255,255,.28)}
+input[type=range]::-moz-range-progress{height:4px;background:#22C55E}
+input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:99px;background:#fff;border:2px solid #22C55E}
 #toast{transition:.35s cubic-bezier(.2,.9,.3,1.2)}
-@media(max-height:720px){#subLine{display:none}.product-logo{width:42px;height:42px}}
-@media(max-height:660px){#statsRow{display:none}}
-@media(max-height:600px){.chips{display:none}#ownerNote{display:none}}
-@media(max-height:540px){#miniBtns{display:none}}
+@media(max-height:760px){#subLine{display:none}.product-logo{width:42px;height:42px}.video-box{width:min(100% - 24px, calc((100dvh - 300px) * var(--vr,1.7778)))}}
+@media(max-height:680px){#statsRow{display:none}#ownerNote{display:none}.video-box{width:min(100% - 24px, calc((100dvh - 250px) * var(--vr,1.7778)))}}
+@media(max-height:600px){.chips{display:none}#miniBtns{display:none}.feed-box{display:none}.video-box{width:min(100% - 24px, calc((100dvh - 215px) * var(--vr,1.7778)))}}
+/* Desktop par video box ko bahut zyada bada hone se rokna */
+@media(min-width:640px){.video-box{width:min(100% - 24px, calc((100dvh - 330px) * var(--vr,1.7778)), 536px)}}
 </style>
 </head>
 <body>
@@ -87,29 +98,17 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;heigh
 </div>
 
 <section class="video-box" id="playerWrap">
-  <video id="promoVideo" playsinline loop preload="auto" poster="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
+  <video id="promoVideo" autoplay playsinline loop preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" poster="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
     <source src="promo.mp4" type="video/mp4">
     <source src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/promo.mp4" type="video/mp4">
   </video>
   <span class="v-badge" style="left:10px;background:#FFC531;color:#000">★ PREMIUM VIDEO GUIDE</span>
-  <button class="sound-fab" id="soundFab" onclick="toggleMute()" title="Sound ON/OFF"><i data-lucide="volume-x" class="w-4 h-4" id="volIcon"></i></button>
-  <button id="bigPlay" onclick="playNow(true)" style="display:none;position:absolute;inset:0;width:100%;background:rgba(0,0,0,.45);border:0;cursor:pointer;z-index:4;place-items:center">
-    <span style="text-align:center"><span style="margin:0 auto;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#22C55E;color:#000;box-shadow:0 0 0 12px rgba(34,197,94,.18)"><i data-lucide="play" class="w-8 h-8" style="margin-left:3px"></i></span><span class="font-orbit" style="display:block;margin-top:12px;font-weight:900;letter-spacing:.14em;font-size:13px;color:#fff">WATCH NOW</span></span>
-  </button>
   <div id="videoError" style="display:none;position:absolute;inset:0;z-index:7;background:#070B14;padding:18px;text-align:center;place-items:center">
     <div><p class="font-orbit" style="font-weight:800;font-size:14px" class="gold">promo.mp4 NAHI MILI</p><p style="font-size:12.5px;color:#93A6C4;margin-top:6px;line-height:1.55">GitHub repo me <b style="color:#fff">promo.mp4</b> ko <b style="color:#fff">index.html</b> ke saath upload karo — video auto-play ho jayegi.</p></div>
   </div>
-  <button id="soundBtn" onclick="soundOn()" class="bounce-soft" style="display:none;position:absolute;left:50%;bottom:16px;z-index:8;align-items:center;gap:7px;background:#22C55E;color:#000;border:0;cursor:pointer;font-family:Rajdhani;font-weight:700;letter-spacing:.1em;font-size:13px;padding:9px 16px;border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.55)"><i data-lucide="volume-2" class="w-4 h-4"></i> TAP FOR SOUND</button>
+  <!-- sirf ek patla slider: aage-peeche karne ke liye (play/pause/mute kuch nahi) -->
   <div class="v-controls">
-    <input id="seek" type="range" min="0" max="100" value="0" step="0.1">
-    <div style="display:flex;align-items:center;gap:8px;margin-top:9px">
-      <button class="v-btn" onclick="togglePlay()" style="background:#22C55E;color:#000;border-color:#22C55E"><i data-lucide="play" class="w-4 h-4" id="playIcon"></i></button>
-      <button class="v-btn" onclick="skip(-10)"><i data-lucide="rewind" class="w-4 h-4"></i></button>
-      <button class="v-btn" onclick="skip(10)"><i data-lucide="fast-forward" class="w-4 h-4"></i></button>
-      <span class="font-mono2" style="font-size:11.5px;color:#D7E2F2"><span id="curTime">0:00</span><span style="color:#64748B"> / </span><span id="durTime">0:00</span></span>
-      <span style="flex:1"></span>
-      <button class="v-btn" onclick="goFullscreen()"><i data-lucide="maximize" class="w-4 h-4"></i></button>
-    </div>
+    <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Video seek">
   </div>
 </section>
 <section style="padding:10px 14px 0;flex-shrink:0">
@@ -138,14 +137,20 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;heigh
   </div>
 </section>
 
-<section style="padding:9px 14px max(10px,env(safe-area-inset-bottom));flex-shrink:0">
+<section style="padding:9px 14px 8px;flex-shrink:0">
   <div id="miniBtns" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
-    <button onclick="soundOn();goFullscreen()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.06em;font-size:12.5px"><i data-lucide="play-circle" class="w-4 h-4 cyan"></i> WATCH FULL</button>
+    <button onclick="goFullscreen()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.06em;font-size:12.5px"><i data-lucide="play-circle" class="w-4 h-4 cyan"></i> WATCH FULL</button>
     <button onclick="shareSite()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.06em;font-size:12.5px"><i data-lucide="share-2" class="w-4 h-4 gold"></i> SHARE</button>
     <button onclick="downloadHTML()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.04em;font-size:12.5px;border-color:rgba(255,197,49,.45)"><i data-lucide="github" class="w-4 h-4 gold"></i> HTML <span class="gold">↓</span></button>
   </div>
   <p id="ownerNote" style="text-align:center;font-size:9.5px;color:#475569;font-weight:600;margin-top:7px">Owner: HTML download karke GitHub me <span class="font-mono2" style="color:#94A3B8">promo.mp4</span> + <span class="font-mono2" style="color:#94A3B8">logo.png</span> ke saath upload karo.</p>
 </section>
+
+<!-- SABSE NICHE: LIVE ACTIVITY (bachi hui jagah me auto-size, scroll nahi) -->
+<div class="feed-box" id="feedBox">
+  <div class="feed-head"><span style="display:flex;align-items:center;gap:6px"><span class="live-dot"></span> LIVE ACTIVITY • INDIA</span><span><span id="feedOnline">12,847</span> ONLINE</span></div>
+  <div class="feed-list" id="feedList"></div>
+</div>
 </div>
 <div id="toast" style="position:fixed;left:50%;bottom:22px;z-index:70;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0F1A2C;border:1px solid rgba(34,197,94,.6);border-radius:16px;padding:12px 18px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:9px;max-width:92vw"><span style="color:#34D399">✔</span><span id="toastMsg">Done!</span></div>
 <script>
@@ -159,37 +164,59 @@ const tH=items.map(x=>`<span style="display:flex;gap:28px"><span>${x}</span><spa
 const fmtIN=n=>n.toLocaleString('en-IN');let users=12847,dl=148920,rv=38412;
 setInterval(()=>{users=Math.max(9000,users+Math.round((Math.random()-.42)*80));dl+=Math.floor(Math.random()*4);if(Math.random()>.6)rv++;statUsers.textContent=fmtIN(users);statDownloads.textContent=fmtIN(dl);reviewCount.textContent=fmtIN(rv);statPing.textContent=14+Math.floor(Math.random()*14);},2600);
 
-/* ===== VIDEO: SOUND KE SAATH AUTO-PLAY, play hote hi controls hide ===== */
-const v=document.getElementById('promoVideo'),wrap=document.getElementById('playerWrap'),bigPlay=document.getElementById('bigPlay'),soundBtn=document.getElementById('soundBtn'),fab=document.getElementById('soundFab');
-const fmtT=s=>{if(!isFinite(s))return'0:00';s=Math.floor(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
-function setIcon(id,n){const e=document.getElementById(id);if(e){e.setAttribute('data-lucide',n);lucide.createIcons();}}
-function reflect(){const playing=!v.paused&&!v.ended;wrap.classList.toggle('playing',playing);bigPlay.style.display=playing?'none':'grid';setIcon('playIcon',playing?'pause':'play');setIcon('volIcon',v.muted?'volume-x':'volume-2');fab.classList.toggle('on',!v.muted);soundBtn.style.display=(playing&&v.muted)?'inline-flex':'none';}
-let unlocked=false;
-function unlockSound(){if(unlocked)return;unlocked=true;v.muted=false;v.volume=1;v.play().catch(()=>{});reflect();}
-function armUnlock(){['pointerdown','touchstart','keydown'].forEach(ev=>document.addEventListener(ev,unlockSound,{once:true,passive:true}));}
+/* ===== VIDEO: link khulte hi AUDIO ke saath AUTO-PLAY, kabhi rukegi nahi, koi play/pause/mute button nahi ===== */
+const v=document.getElementById('promoVideo'),wrap=document.getElementById('playerWrap'),seek=document.getElementById('seek');
+let seeking=false, soundOK=false;
+function setBar(){if(v.duration>0&&!seeking){const p=(v.currentTime/v.duration)*100;seek.value=p;seek.style.setProperty('--p',p+'%');}}
+function keepPlaying(){if(v.readyState>0&&v.paused&&!document.hidden){v.play().catch(()=>{});}}
+/* Browser agar sound wali autoplay roke to video mute me turant chalu + user ke PEHLE touch/scroll par sound apne aap ON (bina kisi button ke) */
+function unlockSound(){if(soundOK)return;v.muted=false;v.volume=1;v.play().then(()=>{soundOK=true;wrap.classList.add('playing');}).catch(()=>{});}
+['pointerdown','touchstart','touchend','click','keydown','wheel','scroll'].forEach(ev=>document.addEventListener(ev,unlockSound,{passive:true,capture:true}));
 async function startVideo(){
-  try{v.muted=false;v.volume=1;await v.play();unlocked=true;}            /* 1) sound ke saath try */
+  try{ v.muted=false; v.volume=1; await v.play(); soundOK=true; }       /* 1) seedha sound ke saath */
   catch(e){ if(e&&e.name==='NotSupportedError'){showErr();return;}
-    try{v.muted=true;await v.play();}catch(e2){}                           /* 2) browser ne roka -> mute se chalu, pehle touch par sound ON */
-    armUnlock(); }
-  reflect();
+    try{ v.muted=true; await v.play(); }catch(e2){} }                     /* 2) roka gaya -> mute se chalu, pehle touch par sound ON */
+  wrap.classList.add('playing');
 }
-function playNow(withSound){if(withSound){v.muted=false;unlocked=true;}v.play().then(reflect).catch(()=>{});}
-function togglePlay(){v.paused?playNow(true):(v.pause(),reflect());}
-function soundOn(){v.muted=false;v.volume=1;unlocked=true;playNow(true);toast('Sound ON — full video guide suno!');}
-function toggleMute(){v.muted=!v.muted;if(!v.muted){unlocked=true;if(v.paused)v.play().catch(()=>{});}reflect();}
-function skip(s){if(isFinite(v.duration))v.currentTime=Math.min(Math.max(0,v.currentTime+s),v.duration);}
-function goFullscreen(){if(wrap.requestFullscreen)wrap.requestFullscreen().catch(()=>{});else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}
-function showErr(){videoError.style.display='grid';bigPlay.style.display='none';soundBtn.style.display='none';}
-v.addEventListener('loadedmetadata',()=>{durTime.textContent=fmtT(v.duration);videoError.style.display='none';});
-v.addEventListener('timeupdate',()=>{if(v.duration>0){seek.value=(v.currentTime/v.duration)*100;curTime.textContent=fmtT(v.currentTime);}});
-seek.addEventListener('input',()=>{if(isFinite(v.duration))v.currentTime=(seek.value/100)*v.duration;});
-v.addEventListener('play',reflect);v.addEventListener('pause',reflect);v.addEventListener('playing',reflect);v.addEventListener('volumechange',reflect);
-v.addEventListener('click',togglePlay);
+function goFullscreen(){unlockSound();if(wrap.requestFullscreen)wrap.requestFullscreen().catch(()=>{});else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}
+function showErr(){videoError.style.display='grid';}
+/* VIDEO KE ASLI RATIO par box set: jitna video, utna hi box — upar-niche black space nahi */
+function fitRatio(){if(v.videoWidth&&v.videoHeight){const r=v.videoWidth/v.videoHeight;wrap.style.setProperty('--vr',r.toFixed(4));document.documentElement.style.setProperty('--vr',r.toFixed(4));}}
+v.addEventListener('loadedmetadata',()=>{videoError.style.display='none';fitRatio();});
+v.addEventListener('resize',fitRatio);
+v.addEventListener('canplay',()=>{videoError.style.display='none';keepPlaying();});
+v.addEventListener('timeupdate',setBar);
+/* slider se aage-peeche: ungli uthate hi wahi se video chalti rahegi */
+seek.addEventListener('input',()=>{seeking=true;seek.style.setProperty('--p',seek.value+'%');if(isFinite(v.duration))v.currentTime=(seek.value/100)*v.duration;});
+['change','pointerup','touchend','mouseup'].forEach(ev=>seek.addEventListener(ev,()=>{seeking=false;keepPlaying();},{passive:true}));
+/* kabhi pause na ho */
+v.addEventListener('pause',()=>{if(!v.ended&&!document.hidden)setTimeout(keepPlaying,120);});
+v.addEventListener('ended',()=>{v.currentTime=0;keepPlaying();});
+v.addEventListener('playing',()=>wrap.classList.add('playing'));
 v.addEventListener('error',e=>{const s=v.querySelectorAll('source');if((e.target===v||e.target===s[s.length-1])&&v.readyState===0)showErr();},true);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&v.paused&&v.readyState>0)v.play().catch(()=>{});});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)keepPlaying();});
+window.addEventListener('pageshow',keepPlaying);window.addEventListener('focus',keepPlaying);
+setInterval(keepPlaying,1500);
 startVideo();window.addEventListener('load',()=>{if(v.paused)startVideo();});
 setTimeout(()=>{if(v.readyState===0&&v.networkState===3)showErr();},7000);
+
+/* ===== LIVE ACTIVITY FEED (bachi hui jagah me, jitni jagah utne items) ===== */
+const fNames=['Arjun • Delhi','Rohan • Mumbai','Sneha • Pune','Vikram • Jaipur','Kabir • Lucknow','Ananya • Kolkata','Rahul • Patna','Dev • Hyderabad','Ishaan • Indore','Priya • Surat','Aman • Nagpur','Yash • Ahmedabad','Sahil • Bhopal','Riya • Ranchi'];
+const fActs=[['ne VIP server connect kiya','#34D399'],['ne video guide complete ki','#00D9FF'],['ne INSTALL NOW se download kiya','#22C55E'],['ko 18ms ping mila — Mumbai node','#34D399'],['ne 5-star rating di ★★★★★','#FFC531'],['ne OB55 VIP activate kiya','#22C55E']];
+const fList=document.getElementById('feedList');
+function feedMax(){const h=fList.clientHeight;return Math.max(0,Math.floor((h-10)/36));}
+function addFeed(){
+  const max=feedMax(); if(max===0){fList.innerHTML='';return;}
+  const n=fNames[Math.floor(Math.random()*fNames.length)],a=fActs[Math.floor(Math.random()*fActs.length)];
+  const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
+  const d=document.createElement('div');d.className='feed-item';
+  d.innerHTML=`<span class="feed-av" style="background:${a[1]}">${n[0]}</span><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><b>${n}</b> ${a[0]}</span><span class="feed-time">${t}</span>`;
+  fList.prepend(d); while(fList.children.length>max) fList.removeChild(fList.lastChild);
+}
+function feedTrim(){const max=feedMax();while(fList.children.length>max)fList.removeChild(fList.lastChild);if(fList.children.length<max)addFeed();}
+setTimeout(()=>{for(let i=0;i<feedMax();i++)addFeed();},300);
+setInterval(addFeed,3800);window.addEventListener('resize',feedTrim);
+setInterval(()=>{const e=document.getElementById('feedOnline');if(e)e.textContent=fmtIN(users);},2600);
 
 async function shareSite(){const url=location.protocol.startsWith('http')?location.href:CANON;const d={title:'OB55 VIP PROXY SERVER',text:'OB55 VIP Proxy Server — Premium Video Guide • Rating 4.9/5 • INSTALL NOW',url};if(navigator.share){try{await navigator.share(d);}catch(e){}}else{try{await navigator.clipboard.writeText(url);toast('Link copy ho gaya! Share karne par OB55 logo dikhega.');}catch(e){toast('Link: '+url);}}}
 function downloadHTML(){const h='<!DOCTYPE html>\n'+document.documentElement.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='index.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);toast('index.html download ho gayi! GitHub me promo.mp4 + logo.png ke saath upload karo.');}
