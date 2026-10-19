@@ -1,274 +1,428 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>OB55 VIP PROXY SERVER — Premium Video Guide & Install</title>
-<meta name="description" content="OB55 VIP Proxy Server — Premium video guide auto-play, fast access, premium design. Rating 4.9/5.">
-<meta name="theme-color" content="#05070B">
+<title>OB55 VIP PROXY SERVER — Play Store Style Download</title>
+<meta name="description" content="OB55 VIP Proxy Server — Fast access, premium design, full video guide. Watch video & Install Now.">
+
+<!-- ===== SHARE PREVIEW : Link share karne par LOGO dikhega ===== -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="OB55 VIP PROXY SERVER">
-<meta property="og:title" content="OB55 VIP PROXY SERVER — Premium Video Guide">
-<meta property="og:description" content="Fast access • Premium design • Full video guide • Rating 4.9/5 — INSTALL NOW">
-<meta property="og:url" content="https://sujitssr1-cmdsujit.github.io/gamer/">
-<meta property="og:image" content="https://sujitssr1-cmdsujit.github.io/gamer/logo.png">
+<meta property="og:site_name" content="OB55 VIP Proxy Server">
+<meta property="og:title" content="OB55 VIP PROXY SERVER">
+<meta property="og:description" content="Fast access • Premium design • Full video guide. Watch video & Install Now.">
 <meta property="og:image" content="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
+<meta property="og:image:secure_url" content="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
+<meta property="og:image:type" content="image/png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sujitssr1-cmdsujit.github.io/gamer/logo.png">
-<!-- WEBSITE LOGO (favicon): premium gradient version — JS isse asli logo se upgrade kar deta hai -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FFD166'/%3E%3Cstop offset='.5' stop-color='%23A855F7'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='17' fill='url(%23g)'/%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%230B0F1A'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='url(%23g)'%3E55%3C/text%3E%3Cpath d='M22 14l4 4 6-7 6 7 4-4-2 10H24z' fill='%23FFC531'/%3E%3C/svg%3E">
+<meta name="twitter:title" content="OB55 VIP PROXY SERVER">
+<meta name="twitter:description" content="Fast access • Premium design • Full video guide. Watch video & Install Now.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
+<meta name="theme-color" content="#01875f">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
+
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@700&family=Inter:wght@500;600;700&family=JetBrains+Mono:wght@700&family=Hind:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{-webkit-tap-highlight-color:transparent;margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none}
-body{background:#02040A;color:#E8EEF7;font-family:'Inter',system-ui,sans-serif}
-body::before{content:"";position:fixed;inset:0;background:url('https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200') center/cover no-repeat;opacity:.22}
-body::after{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(2,4,10,.25) 0%,rgba(2,4,10,.94) 78%)}
-.font-orbit{font-family:'Orbitron',sans-serif}.font-raj{font-family:'Rajdhani',sans-serif}.font-mono2{font-family:'JetBrains Mono',monospace}.gold{color:#FFC531}.cyan{color:#00D9FF}
-.app{position:relative;z-index:2;width:min(560px,100%);height:100dvh;margin:0 auto;display:flex;flex-direction:column;background:rgba(6,10,19,.92);backdrop-filter:blur(10px)}
-@media(min-width:640px){.app{border-left:1px solid rgba(255,197,49,.25);border-right:1px solid rgba(255,197,49,.25);box-shadow:0 0 90px rgba(0,0,0,.85)}}
-.clock-wrap{text-align:right;line-height:1.05;flex-shrink:0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:6px 9px}
-.clock{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.04em;color:#fff;font-size:14px;white-space:nowrap}
-.date{font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:#8FA1BB;font-weight:700;margin-top:2px;white-space:nowrap}
-.product-row{display:flex;align-items:center;gap:12px}
-.product-logo{width:50px;height:50px;border-radius:15px;object-fit:cover;border:2px solid rgba(255,197,49,.6);background:#111827;flex-shrink:0}
-.product-title{font-family:'Orbitron',sans-serif;font-weight:800;line-height:1.08;font-size:clamp(14px,4vw,18px)}
-.sub{color:#9FB0C9}.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05)}
-.rating{display:flex;align-items:center;gap:6px;font-weight:700;font-size:13px}.stars{color:#FFC531;letter-spacing:1.5px;text-shadow:0 0 14px rgba(255,197,49,.5)}
-.live-dot{width:7px;height:7px;border-radius:99px;background:#22C55E;animation:pd 1.6s infinite;flex-shrink:0}
-@keyframes pd{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-.btn-green{background:#22C55E;color:#03140A;box-shadow:0 12px 34px rgba(34,197,94,.42),inset 0 1px 0 rgba(255,255,255,.55);transition:.2s;animation:ip 2s infinite}
-.btn-green:hover{background:#36D96F}.btn-green:active{transform:scale(.98)}
-@keyframes ip{0%{box-shadow:0 12px 34px rgba(34,197,94,.42),0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 12px 34px rgba(34,197,94,.42),0 0 0 14px rgba(34,197,94,0)}100%{box-shadow:0 12px 34px rgba(34,197,94,.42),0 0 0 0 rgba(34,197,94,0)}}
-.btn-ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;transition:.2s}.btn-ghost:active{transform:scale(.97)}
-.shine{position:relative;overflow:hidden}.shine::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:rgba(255,255,255,.35);filter:blur(8px);animation:sh 2.6s infinite}
-@keyframes sh{0%{transform:translateX(-140%) skewX(-18deg)}100%{transform:translateX(260%) skewX(-18deg)}}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}.marquee-track{display:flex;width:max-content;animation:mq 20s linear infinite}
-@keyframes bs{0%,100%{transform:translate(-50%,0) scale(1)}50%{transform:translate(-50%,-3px) scale(1.05)}}.bounce-soft{animation:bs 1.8s ease-in-out infinite}
-.hindi-note{font-family:'Hind','Noto Sans Devanagari',system-ui,sans-serif;font-size:12.5px;font-weight:600;line-height:1.45;color:#fff;text-align:center;background:rgba(255,197,49,.09);border:1px solid rgba(255,197,49,.45);border-radius:12px;padding:7px 10px;display:flex;align-items:center;justify-content:center;gap:7px}
-/* VIDEO BOX = video ke asli ratio jitna hi (--vr JS se video ki real width/height se set hota hai). Height limit taaki screen me sab fit rahe — box khud chhota ho jata hai, ratio kabhi nahi tootta */
-.video-box{flex:0 0 auto;position:relative;margin:10px auto 0;width:min(100% - 24px, calc((100dvh - 440px) * var(--vr,1.7778)));max-width:calc(100% - 24px);aspect-ratio:var(--vr,16/9);border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(255,197,49,.35);box-shadow:0 24px 60px rgba(0,0,0,.65);transition:width .3s ease}
-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;display:block}video::-webkit-media-controls{display:none!important}
-/* Bachi hui jagah: LIVE ACTIVITY feed */
-.feed-box{flex:1 1 auto;min-height:0;margin:0 14px max(10px,env(safe-area-inset-bottom));border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;overflow:hidden}
-.feed-head{display:flex;align-items:center;justify-content:space-between;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:9.5px;font-weight:800;letter-spacing:.14em;color:#8FA1BB;flex-shrink:0}
-.feed-list{flex:1;min-height:0;overflow:hidden;padding:5px 8px;display:flex;flex-direction:column;gap:4px}
-.feed-item{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:10px;background:rgba(255,255,255,.03);font-size:11.5px;font-weight:500;color:#C7D2E3;animation:fi .4s ease both;flex-shrink:0}
-.feed-item b{color:#fff;font-weight:700}.feed-av{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:900;color:#000;flex-shrink:0}
-.feed-time{margin-left:auto;font-size:9.5px;color:#64748B;font-family:'JetBrains Mono',monospace;flex-shrink:0}
-@keyframes fi{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.v-badge{position:absolute;top:10px;display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;letter-spacing:.14em;padding:6px 9px;border-radius:9px;pointer-events:none;z-index:5;transition:opacity .35s}
-.v-controls{position:absolute;left:0;right:0;bottom:0;z-index:6;padding:18px 0 0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0));display:flex;align-items:flex-end}
-.video-box.playing .v-badge{opacity:0;pointer-events:none}
-input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:14px;margin:0;background:transparent;outline:none;cursor:pointer;touch-action:none}
-input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:0;background:linear-gradient(to right,#22C55E 0%,#22C55E var(--p,0%),rgba(255,255,255,.28) var(--p,0%),rgba(255,255,255,.28) 100%)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:99px;background:#fff;border:2px solid #22C55E;box-shadow:0 0 10px rgba(34,197,94,.9)}
-input[type=range]::-moz-range-track{height:4px;background:rgba(255,255,255,.28)}
-input[type=range]::-moz-range-progress{height:4px;background:#22C55E}
-input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:99px;background:#fff;border:2px solid #22C55E}
-#toast{transition:.35s cubic-bezier(.2,.9,.3,1.2)}
-/* ===== PREMIUM CUSTOM LOGO (asli logo + alag premium color + gradient frame + crown) ===== */
-.plogo{position:relative;flex-shrink:0;border-radius:26%;padding:2.5px;background:conic-gradient(from 200deg,#FFD166,#A855F7,#22D3EE,#34D399,#FFD166);box-shadow:0 8px 24px rgba(168,85,247,.38),0 0 0 1px rgba(255,255,255,.06)}
-.plogo-img{width:100%;height:100%;border-radius:24%;object-fit:cover;display:block;background:#0B0F1A;filter:hue-rotate(195deg) saturate(1.4) contrast(1.08) brightness(1.06)}
-.plogo::after{content:"";position:absolute;inset:2.5px;border-radius:24%;background:linear-gradient(140deg,rgba(255,255,255,.36),rgba(255,255,255,0) 44%);pointer-events:none}
-.plogo-crown{position:absolute;right:-6px;bottom:-6px;width:42%;height:42%;min-width:17px;min-height:17px;border-radius:50%;background:#FFC531;color:#1A1200;display:grid;place-items:center;border:2px solid #060A13;box-shadow:0 4px 10px rgba(0,0,0,.5);z-index:2}
-.plogo-crown svg{width:62%;height:62%}
-.plogo-sm{width:40px;height:40px}.plogo-lg{width:68px;height:68px}
-/* ===== SOUND ON/OFF — video ke upar, HAMESHA dikhta hai ===== */
-.sound-fab{position:absolute;top:10px;right:10px;z-index:9;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px 0 9px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.62);color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(6px);transition:.2s;opacity:1!important;pointer-events:auto!important}
-.sound-fab.on{background:#22C55E;color:#03140A;border-color:#22C55E}
-.sound-fab.off{background:rgba(239,68,68,.92);border-color:#F87171;animation:sfp 1.6s infinite}
-@keyframes sfp{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%{box-shadow:0 0 0 9px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
-.sound-fab svg{width:15px;height:15px}#icOn,#icOff{display:none}.sound-fab.on #icOn,.sound-fab.off #icOff{display:block}
-/* ===== PLAY STORE STYLE LISTING + INSTALL ===== */
-.ps-card{margin:10px 12px 0;background:#fff;color:#202124;border-radius:20px;padding:6px 14px 10px;flex-shrink:0;font-family:'Roboto','Inter',system-ui,sans-serif;box-shadow:0 18px 44px rgba(0,0,0,.5)}
-.ps-top{display:flex;align-items:center;gap:18px;height:28px;margin-bottom:2px}.ps-ico{width:20px;height:20px;fill:#5F6368}
-.ps-app{display:flex;align-items:center;gap:14px}.ps-meta{min-width:0;flex:1}
-.ps-name{font-size:19px;font-weight:700;line-height:1.15;color:#202124;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ps-dev{font-size:13px;font-weight:600;color:#01875F;margin-top:3px}.ps-small{font-size:11px;color:#5F6368;margin-top:1px}
-.ps-stats{display:flex;margin-top:9px;padding:3px 0}
-.ps-stats>div{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border-left:1px solid #E0E0E0}.ps-stats>div:first-child{border-left:0}
-.ps-stats b{font-size:14px;font-weight:700;color:#202124;display:flex;align-items:center;gap:2px;height:20px}.ps-stats b svg{width:13px;height:13px;fill:#202124}
-.ps-stats span{font-size:10.5px;color:#5F6368}
-.ps-age{display:inline-grid;place-items:center;min-width:18px;height:18px;border:1.6px solid #202124;border-radius:3px;font-size:10px;font-weight:800;padding:0 2px}
-.ps-install{display:flex;align-items:center;justify-content:center;height:42px;border-radius:999px;background:#01875F;color:#fff;font-size:15px;font-weight:600;letter-spacing:.01em;text-decoration:none;margin-top:8px;transition:.2s;animation:psp 2.2s infinite}
-.ps-install:hover{background:#0A9A6E}.ps-install:active{transform:scale(.985)}
-@keyframes psp{0%{box-shadow:0 0 0 0 rgba(1,135,95,.45)}70%{box-shadow:0 0 0 10px rgba(1,135,95,0)}100%{box-shadow:0 0 0 0 rgba(1,135,95,0)}}
-.ps-actions{display:flex;justify-content:center;gap:26px;margin-top:6px}
-.ps-actions button{display:flex;align-items:center;gap:7px;background:none;border:0;color:#01875F;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;padding:4px 6px;border-radius:8px}.ps-actions svg{width:18px;height:18px;fill:#01875F}
-.ps-device{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#5F6368;margin-top:4px}.ps-device svg{width:15px;height:15px;fill:#5F6368}
-.hindi-note.light{color:#202124;background:#FFF6DB;border-color:#F2C94C;margin-top:8px;font-size:12px;padding:6px 9px}.hindi-note.light .gold{color:#B7791F}
-/* ===== screen-fit (scroll kabhi nahi) ===== */
-@media(max-height:760px){.ps-device{display:none}#ownerNote{display:none}.video-box{width:min(100% - 24px, calc((100dvh - 400px) * var(--vr,1.7778)))}}
-@media(max-height:680px){.ps-actions{display:none}.ps-top{display:none}.video-box{width:min(100% - 24px, calc((100dvh - 340px) * var(--vr,1.7778)))}}
-@media(max-height:600px){#miniBtns{display:none}.feed-box{display:none}.ps-stats{display:none}.video-box{width:min(100% - 24px, calc((100dvh - 290px) * var(--vr,1.7778)))}}
-@media(min-width:640px){.video-box{width:min(100% - 24px, calc((100dvh - 440px) * var(--vr,1.7778)), 536px)}}
+  html,body{height:100%}
+  body{font-family:'Inter',system-ui,sans-serif;background:#05060f;color:#fff;overflow:hidden}
+  .font-orbit{font-family:'Orbitron',sans-serif}
+  .glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10)}
+  .glass-strong{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.12)}
+  .text-gradient{background:linear-gradient(90deg,#22d3ee,#a78bfa,#facc15);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gold-gradient{background:linear-gradient(90deg,#fde68a,#f59e0b,#facc15);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-grid{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,black 40%,transparent 100%)}
+
+  /* ===== PLAY STORE STYLE INSTALL BUTTON (Google Play green) ===== */
+  .play-install{position:relative;overflow:hidden;background:#01875f;box-shadow:0 10px 30px rgba(1,135,95,.45);transition:.2s}
+  .play-install:hover{background:#017a57}
+  .play-install:active{transform:scale(.98)}
+  .play-install:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-120%);animation:shimmer 3s infinite}
+  @keyframes shimmer{0%{transform:translateX(-120%)}60%,100%{transform:translateX(120%)}}
+  .pulse-install{animation:installPulse 2s ease-in-out infinite}
+  @keyframes installPulse{0%,100%{box-shadow:0 10px 30px rgba(1,135,95,.45),0 0 0 0 rgba(1,135,95,.4)}50%{box-shadow:0 10px 30px rgba(1,135,95,.6),0 0 0 12px rgba(1,135,95,0)}}
+
+  /* ===== PREMIUM LOGO TREATMENT ===== */
+  .premium-logo-ring{position:relative}
+  .premium-logo-ring:before{content:"";position:absolute;inset:-4px;border-radius:22px;background:conic-gradient(from 0deg,#facc15,#f59e0b,#ec4899,#8b5cf6,#22d3ee,#facc15);z-index:-1;animation:ringRotate 6s linear infinite;will-change:transform}
+  @keyframes ringRotate{to{transform:rotate(360deg)}}
+  .premium-logo-glow{box-shadow:0 0 20px rgba(245,158,11,.35),0 6px 18px rgba(0,0,0,.4)}
+
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+  .live-dot{animation:pulseDot 1.6s infinite}
+  .star-fill{fill:#facc15;color:#facc15}
+  .chip{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);font-size:11px;font-weight:700;color:#e5e7eb;white-space:nowrap}
+
+  /* ===== CUSTOM VIDEO PROGRESS SLIDER ===== */
+  #videoSeek{-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:rgba(255,255,255,.22);outline:none;cursor:pointer;transition:height .15s}
+  #videoSeek:hover{height:8px}
+  #videoSeek::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:#4ade80;box-shadow:0 0 12px rgba(74,222,128,.8),0 2px 6px rgba(0,0,0,.4);cursor:pointer;transition:transform .15s}
+  #videoSeek::-webkit-slider-thumb:hover{transform:scale(1.25)}
+  #videoSeek::-moz-range-thumb{width:14px;height:14px;border:none;border-radius:50%;background:#4ade80;box-shadow:0 0 12px rgba(74,222,128,.8),0 2px 6px rgba(0,0,0,.4);cursor:pointer}
+  #videoSeek::-moz-range-track{background:transparent}
+
+  /* Sound button — always visible */
+  .sound-btn{position:absolute;top:12px;right:12px;z-index:20;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:800;padding:8px 12px;border-radius:999px;transition:.2s;letter-spacing:.05em}
+  .sound-btn:hover{background:rgba(0,0,0,.85)}
+  .sound-btn:active{transform:scale(.95)}
+
+  main::-webkit-scrollbar{display:none}
+  main{scrollbar-width:none}
 </style>
 </head>
-<body>
-<div class="app">
-<header style="padding:9px 12px 8px;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-    <div style="display:flex;align-items:center;gap:9px;min-width:0;flex:1">
-      <div class="plogo plogo-sm"><img class="plogo-img" src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png" alt="OB55"><span class="plogo-crown"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg></span></div>
-      <div style="min-width:0;flex:1;line-height:1.1">
-        <p class="font-orbit" style="font-weight:900;font-size:clamp(11px,3.2vw,14.5px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">OB55 <span class="gold">VIP</span> PROXY SERVER</p>
-        <p style="font-size:8.5px;letter-spacing:.16em;font-weight:800;color:#8FA1BB;margin-top:3px;white-space:nowrap">★ NEW PREMIUM • <span style="color:#34D399">LIVE</span></p>
+
+<body class="h-[100dvh] flex flex-col relative">
+
+<!-- BACKGROUND DECOR -->
+<div class="fixed inset-0 -z-10 pointer-events-none">
+  <div class="absolute inset-0 bg-[#05060f]"></div>
+  <div class="absolute inset-0 hero-grid"></div>
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[420px] bg-violet-600/25 blur-[130px] rounded-full"></div>
+  <div class="absolute bottom-0 -left-32 w-[320px] h-[320px] bg-cyan-500/15 blur-[110px] rounded-full"></div>
+  <div class="absolute bottom-0 -right-32 w-[320px] h-[320px] bg-amber-500/10 blur-[110px] rounded-full"></div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="shrink-0 border-b border-white/10 bg-[#05060f]/80 backdrop-blur-xl relative z-20">
+  <div class="max-w-3xl mx-auto px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2.5">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <div class="relative shrink-0">
+        <img src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png" alt="OB55 logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl object-cover ring-2 ring-amber-400/60 shadow-lg shadow-violet-500/30 bg-white/10" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-violet-500 to-amber-400 hidden items-center justify-center font-orbit font-black text-[11px]">OB55</div>
+        <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-400 border-2 border-[#05060f] rounded-full live-dot"></span>
+      </div>
+      <div class="leading-none min-w-0">
+        <p class="font-orbit font-black tracking-wide text-[11px] sm:text-[13px] lg:text-sm truncate">OB55 <span class="gold-gradient">VIP</span> PROXY SERVER</p>
+        <p class="text-[8px] sm:text-[9px] tracking-[0.22em] text-cyan-300 font-bold mt-1 flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-green-400 rounded-full live-dot"></span> SERVER ONLINE</p>
       </div>
     </div>
-    <div class="clock-wrap"><div class="clock" id="indiaClock">--:--:--</div><div class="date" id="indiaDate">INDIA • IST</div></div>
-  </div>
-</header>
-<div style="background:#FFC531;color:#0A0A00;overflow:hidden;padding:4px 0;flex-shrink:0">
-  <div class="marquee-track font-raj" style="font-weight:700;letter-spacing:.13em;font-size:11px"><div style="display:flex;gap:28px;padding-right:28px" id="tickerA"></div><div style="display:flex;gap:28px;padding-right:28px" id="tickerB"></div></div>
-</div>
-
-<section class="video-box" id="playerWrap">
-  <video id="promoVideo" autoplay playsinline loop preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" poster="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png">
-    <source src="promo.mp4" type="video/mp4">
-    <source src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/promo.mp4" type="video/mp4">
-  </video>
-  <span class="v-badge" style="left:10px;background:#FFC531;color:#000">★ PREMIUM VIDEO GUIDE</span>
-  <!-- SOUND ON/OFF — hamesha visible -->
-  <button class="sound-fab on" id="soundFab" onclick="toggleSound(event)" aria-label="Sound on/off">
-    <svg id="icOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
-    <svg id="icOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
-    <span id="volTxt">SOUND ON</span>
-  </button>
-  <div id="videoError" style="display:none;position:absolute;inset:0;z-index:7;background:#070B14;padding:18px;text-align:center;place-items:center">
-    <div><p class="font-orbit" style="font-weight:800;font-size:14px" class="gold">promo.mp4 NAHI MILI</p><p style="font-size:12.5px;color:#93A6C4;margin-top:6px;line-height:1.55">GitHub repo me <b style="color:#fff">promo.mp4</b> ko <b style="color:#fff">index.html</b> ke saath upload karo — video auto-play ho jayegi.</p></div>
-  </div>
-  <!-- sirf ek patla slider: aage-peeche karne ke liye (play/pause/mute kuch nahi) -->
-  <div class="v-controls">
-    <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Video seek">
-  </div>
-</section>
-<!-- ===== PLAY STORE STYLE APP LISTING + INSTALL (video ke just niche) ===== -->
-<section class="ps-card" id="psCard">
-  <div class="ps-top">
-    <svg viewBox="0 0 24 24" class="ps-ico"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z"/></svg>
-    <span style="flex:1"></span>
-    <svg viewBox="0 0 24 24" class="ps-ico"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
-    <svg viewBox="0 0 24 24" class="ps-ico"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-  </div>
-  <div class="ps-app">
-    <div class="plogo plogo-lg"><img class="plogo-img" src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png" alt="OB55 VIP Proxy Server"><span class="plogo-crown"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg></span></div>
-    <div class="ps-meta">
-      <h1 class="ps-name">OB55 VIP Proxy Server</h1>
-      <p class="ps-dev">OB55 Premium Studio</p>
-      <p class="ps-small">Contains ads • In-app purchases</p>
+    <div class="flex items-center gap-2 shrink-0">
+      <button id="shareBtn" class="hidden sm:flex w-10 h-10 glass rounded-xl items-center justify-center hover:bg-white/10 transition" title="Share this page"><i data-lucide="share-2" class="w-4.5 h-4.5 text-cyan-300"></i></button>
+      <!-- INDIA CLOCK -->
+      <div class="clock-wrap glass rounded-xl px-3 py-1.5 text-right">
+        <div class="flex items-center justify-end gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 live-dot"></span>
+          <span class="text-[8px] sm:text-[9px] tracking-[0.2em] text-green-300 font-bold">INDIA • LIVE IST</span>
+        </div>
+        <div class="clock font-orbit font-bold text-[13px] sm:text-base leading-none mt-1 tabular-nums" id="indiaClock">--:--:--</div>
+        <div class="date text-[9px] sm:text-[10px] text-slate-400 mt-0.5" id="indiaDate">Loading...</div>
+      </div>
     </div>
   </div>
-  <div class="ps-stats">
-    <div><b>4.9 <svg viewBox="0 0 24 24"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></b><span id="reviewCount">38K reviews</span></div>
-    <div><b>1L+</b><span>Downloads</span></div>
-    <div><b><span class="ps-age">3+</span></b><span>Rated for 3+</span></div>
-  </div>
-  <p class="hindi-note light">⚠️ <span>यदि आपका इंस्टॉल नहीं हो रहा है, तो यही ट्रिक <b class="gold">2–3 बार</b> दोबारा ट्राई करें — <b style="color:#01875F">100% डाउनलोड</b> हो जाएगा।</span></p>
-  <a href="https://page.doal.top/?key=KzlyasEy&lx=1&cbe=nl5QojOHpVpQ0i-U2Pu7&plac1=prom2" target="_blank" rel="noopener" onclick="toast('Download page khul raha hai... Video wale steps follow karna!')" class="ps-install">Install</a>
-  <div class="ps-actions">
-    <button onclick="shareSite()"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7l7-4.1c.5.5 1.3.8 2.1.8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .5.1.7l-7 4.1C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2.1-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9-1.3-2.9-2.9-2.9z"/></svg> Share</button>
-    <button onclick="wishlist(this)"><svg viewBox="0 0 24 24"><path d="M17 3H7a2 2 0 0 0-2 2v16l7-3 7 3V5a2 2 0 0 0-2-2zm0 15-5-2.2L7 18V5h10z"/></svg> <span>Add to wishlist</span></button>
-  </div>
-  <p class="ps-device"><svg viewBox="0 0 24 24"><path d="M17 1H7a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 18H7V5h10z"/></svg> This app is available for your device <b style="color:#01875F;margin-left:auto">✓ Compatible</b></p>
-</section>
+</header>
 
+<!-- ================= MAIN ================= -->
+<main class="flex-1 min-h-0 w-full max-w-3xl mx-auto px-3 sm:px-5 py-3 flex flex-col gap-3 relative z-10 overflow-y-auto" style="scrollbar-width:none">
 
-<section style="padding:9px 14px 8px;flex-shrink:0">
-  <div id="miniBtns" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-    <button onclick="goFullscreen()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.06em;font-size:12.5px"><i data-lucide="play-circle" class="w-4 h-4 cyan"></i> WATCH FULL</button>
-    <button onclick="downloadHTML()" class="btn-ghost font-raj" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:14px;font-weight:700;letter-spacing:.04em;font-size:12.5px;border-color:rgba(255,197,49,.45)"><i data-lucide="github" class="w-4 h-4 gold"></i> HTML <span class="gold">↓</span></button>
-  </div>
-  <p id="ownerNote" style="text-align:center;font-size:9.5px;color:#475569;font-weight:600;margin-top:7px">Owner: HTML download karke GitHub me <span class="font-mono2" style="color:#94A3B8">promo.mp4</span> + <span class="font-mono2" style="color:#94A3B8">logo.png</span> ke saath upload karo.</p>
-</section>
+  <!-- ===== VIDEO : exact ratio, autoplay + sound ===== -->
+  <section id="videoSection" class="shrink-0 w-full relative rounded-[22px] overflow-hidden border border-white/15 bg-black shadow-[0_20px_60px_rgba(0,0,0,.55)]" style="aspect-ratio:16/9">
+    <video id="promoVideo" class="absolute inset-0 w-full h-full object-cover bg-black" autoplay muted loop playsinline webkit-playsinline preload="auto">
+      <source src="promo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-<!-- SABSE NICHE: LIVE ACTIVITY (bachi hui jagah me auto-size, scroll nahi) -->
-<div class="feed-box" id="feedBox">
-  <div class="feed-head"><span style="display:flex;align-items:center;gap:6px"><span class="live-dot"></span> LIVE ACTIVITY • INDIA</span><span><span id="feedOnline">12,847</span> ONLINE</span></div>
-  <div class="feed-list" id="feedList"></div>
+    <!-- Top badges -->
+    <div class="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none z-10">
+      <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-300 to-yellow-500 text-slate-950 text-[10px] sm:text-[11px] font-black tracking-wider px-3 py-1.5 rounded-full shadow-lg"><i data-lucide="crown" class="w-3.5 h-3.5"></i> NEW PREMIUM</span>
+      <span class="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur border border-red-400/30 text-red-300 text-[10px] sm:text-[11px] font-bold px-3 py-1.5 rounded-full"><span class="w-2 h-2 bg-red-500 rounded-full live-badge-dot"></span> VIDEO GUIDE</span>
+    </div>
+
+    <!-- SOUND ON/OFF button — ALWAYS VISIBLE -->
+    <button id="soundBtn" class="sound-btn">
+      <i data-lucide="volume-2" class="w-4 h-4" id="soundIcon"></i>
+      <span id="soundLabel">SOUND ON</span>
+    </button>
+
+    <!-- CUSTOM PROGRESS SLIDER -->
+    <div class="absolute bottom-0 inset-x-0 z-10 px-3 pb-2.5 pt-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+      <input id="videoSeek" type="range" min="0" max="100" value="0" step="0.1" class="w-full appearance-none outline-none cursor-pointer" style="accent-color:#4ade80">
+    </div>
+
+    <!-- Video fallback -->
+    <div id="videoFallback" class="absolute inset-0 hidden flex-col items-center justify-center gap-3 bg-[#0a0c20] text-center px-6 z-[5]">
+      <img src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png" alt="OB55 logo" class="w-20 h-20 rounded-3xl object-cover ring-1 ring-white/20 bg-white/10" onerror="this.style.display='none'">
+      <p class="font-orbit font-bold tracking-widest text-sm">PREMIUM VIDEO GUIDE</p>
+      <p class="text-xs text-slate-400 leading-relaxed max-w-xs">Video ke liye GitHub repo me <span class="font-mono text-amber-300">promo.mp4</span> file ko <span class="font-mono text-cyan-300">index.html</span> ke saath upload karo — video yahin auto-play hoga.</p>
+    </div>
+  </section>
+
+  <!-- ===== BADA INSTALL BUTTON : VIDEO KE JUST NICHE ===== -->
+  <section class="shrink-0">
+    <a href="https://page.doal.top/?key=KzlyasEy&lx=1&cbe=nl5QojOHpVpQ0i-U2Pu7&plac1=prom2" target="_blank" rel="noopener" class="play-install w-full flex items-center justify-center gap-3 text-white font-black text-xl sm:text-2xl px-6 py-5 rounded-full pulse-install">
+      <i data-lucide="download" class="w-7 h-7 shrink-0"></i>
+      <span class="leading-none tracking-wide">INSTALL NOW</span>
+      <i data-lucide="chevrons-right" class="w-6 h-6 shrink-0"></i>
+    </a>
+    <p class="text-center text-[10px] text-slate-500 mt-1.5 flex items-center justify-center gap-1.5"><i data-lucide="zap" class="w-3 h-3 text-green-400"></i> Tap to open download • Fast link</p>
+  </section>
+
+  <!-- ===== PLAY STORE STYLE APP CARD (Video ke niche) ===== -->
+  <section class="glass-strong rounded-[22px] px-4 py-3.5 sm:px-5 shrink-0">
+    <div class="flex items-start gap-3.5">
+      <!-- Premium Logo -->
+      <div class="relative shrink-0">
+        <div class="premium-logo-ring">
+          <img class="premium-logo-glow w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-[20px] object-cover relative z-[1] bg-white/10" src="https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png" alt="OB55 VIP Proxy Server logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-[20px] bg-gradient-to-br from-amber-400 via-rose-500 to-violet-600 hidden items-center justify-center font-orbit font-black text-lg relative z-[1]">OB55</div>
+        </div>
+        <span class="absolute -bottom-1 -right-1 bg-green-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full border-2 border-[#12122a] z-10 flex items-center gap-0.5"><i data-lucide="check" class="w-2.5 h-2.5"></i>VIP</span>
+      </div>
+
+      <!-- App Info -->
+      <div class="min-w-0 flex-1 pt-0.5">
+        <h2 class="font-orbit font-black text-base sm:text-lg leading-tight truncate">OB55 VIP PROXY SERVER</h2>
+        <p class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3 h-3 text-green-400"></i> OB55 Official • Verified Developer</p>
+        <div class="flex items-center gap-2 mt-1.5 flex-wrap">
+          <span class="stars flex gap-0.5">
+            <i data-lucide="star" class="w-3.5 h-3.5 star-fill"></i><i data-lucide="star" class="w-3.5 h-3.5 star-fill"></i><i data-lucide="star" class="w-3.5 h-3.5 star-fill"></i><i data-lucide="star" class="w-3.5 h-3.5 star-fill"></i><i data-lucide="star" class="w-3.5 h-3.5 star-fill"></i>
+          </span>
+          <span class="font-bold text-xs">4.9</span>
+          <span class="text-slate-500 text-[10px]">(12,480 reviews)</span>
+          <span class="text-slate-600">•</span>
+          <span class="text-[10px] text-slate-400 font-semibold">50,000+ Downloads</span>
+        </div>
+        <div class="chips flex flex-wrap gap-1.5 mt-2">
+          <span class="chip"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-green-400"></i> Easy Access</span>
+          <span class="chip"><i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i> Fast Link</span>
+          <span class="chip"><i data-lucide="star" class="w-3.5 h-3.5 text-yellow-400 star-fill"></i> Premium Look</span>
+          <span class="chip"><i data-lucide="smartphone" class="w-3.5 h-3.5 text-cyan-300"></i> Mobile Friendly</span>
+        </div>
+      </div>
+
+      <!-- Online badge -->
+      <div class="hidden sm:flex flex-col items-end gap-1 shrink-0">
+        <span class="inline-flex items-center gap-1.5 text-green-300 bg-green-400/10 border border-green-400/20 text-[10px] font-bold px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 bg-green-400 rounded-full live-dot"></span> ONLINE</span>
+        <span class="text-[10px] text-slate-500 font-semibold"><span id="heroUsers">24,815</span> Online</span>
+      </div>
+    </div>
+
+    <!-- PLAY STORE INSTALL BUTTON -->
+    <div class="mt-3.5">
+      <p class="text-center text-[12px] sm:text-[13px] font-bold text-amber-300 bg-amber-400/10 border border-amber-400/25 rounded-xl px-3 py-2 mb-2.5 leading-snug">
+        अगर इंस्टॉल नहीं हो रहा तो नीचे दिए गए Install Button को <span class="text-white">2–3 बार ट्राई करें</span> — <span class="text-green-300">100% आपका डाउनलोड हो जाएगा</span>
+      </p>
+      <a href="https://page.doal.top/?key=KzlyasEy&lx=1&cbe=nl5QojOHpVpQ0i-U2Pu7&plac1=prom2" target="_blank" rel="noopener" class="play-install w-full flex items-center justify-center gap-3 text-white font-extrabold text-lg px-6 py-4 rounded-full">
+        <i data-lucide="download" class="w-6 h-6 shrink-0"></i>
+        <span class="leading-none">INSTALL</span>
+      </a>
+      <p class="text-center text-[10px] text-slate-500 mt-2 flex items-center justify-center gap-1.5"><i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5"></i> Tap to open download • Fast external link</p>
+    </div>
+  </section>
+
+  <!-- ===== EXTRA CONTENT ===== -->
+  <section class="shrink-0 space-y-2.5">
+    <!-- STEPS ROW -->
+    <div class="grid grid-cols-4 gap-2">
+      <div class="glass rounded-2xl p-2.5 sm:p-3.5 text-center"><span class="font-orbit font-black text-cyan-400/40 text-lg sm:text-xl">01</span><div class="w-8 h-8 mx-auto rounded-full bg-cyan-400/15 flex items-center justify-center mt-1"><i data-lucide="play" class="w-4 h-4 text-cyan-300"></i></div><p class="text-[10px] sm:text-xs font-bold mt-1.5">Watch Video</p></div>
+      <div class="glass rounded-2xl p-2.5 sm:p-3.5 text-center"><span class="font-orbit font-black text-violet-400/40 text-lg sm:text-xl">02</span><div class="w-8 h-8 mx-auto rounded-full bg-violet-400/15 flex items-center justify-center mt-1"><i data-lucide="mouse-pointer-click" class="w-4 h-4 text-violet-300"></i></div><p class="text-[10px] sm:text-xs font-bold mt-1.5">Tap Install</p></div>
+      <div class="glass rounded-2xl p-2.5 sm:p-3.5 text-center"><span class="font-orbit font-black text-pink-400/40 text-lg sm:text-xl">03</span><div class="w-8 h-8 mx-auto rounded-full bg-pink-400/15 flex items-center justify-center mt-1"><i data-lucide="download" class="w-4 h-4 text-pink-300"></i></div><p class="text-[10px] sm:text-xs font-bold mt-1.5">Download</p></div>
+      <div class="glass rounded-2xl p-2.5 sm:p-3.5 text-center"><span class="font-orbit font-black text-amber-400/40 text-lg sm:text-xl">04</span><div class="w-8 h-8 mx-auto rounded-full bg-amber-400/15 flex items-center justify-center mt-1"><i data-lucide="rocket" class="w-4 h-4 text-amber-300"></i></div><p class="text-[10px] sm:text-xs font-bold mt-1.5">Enjoy VIP</p></div>
+    </div>
+
+    <!-- FEATURES GRID -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <div class="glass rounded-2xl p-3 flex items-center gap-2.5 hover:bg-white/[0.08] transition"><div class="w-9 h-9 shrink-0 rounded-xl bg-amber-400/15 border border-amber-400/20 flex items-center justify-center"><i data-lucide="zap" class="w-4.5 h-4.5 text-amber-300"></i></div><div><p class="text-xs font-bold">Fast Link</p><p class="text-[10px] text-slate-500">One-tap access</p></div></div>
+      <div class="glass rounded-2xl p-3 flex items-center gap-2.5 hover:bg-white/[0.08] transition"><div class="w-9 h-9 shrink-0 rounded-xl bg-red-400/15 border border-red-400/20 flex items-center justify-center"><i data-lucide="clapperboard" class="w-4.5 h-4.5 text-red-300"></i></div><div><p class="text-xs font-bold">Video Guide</p><p class="text-[10px] text-slate-500">Full steps</p></div></div>
+      <div class="glass rounded-2xl p-3 flex items-center gap-2.5 hover:bg-white/[0.08] transition"><div class="w-9 h-9 shrink-0 rounded-xl bg-violet-400/15 border border-violet-400/20 flex items-center justify-center"><i data-lucide="crown" class="w-4.5 h-4.5 text-violet-300"></i></div><div><p class="text-xs font-bold">Premium Look</p><p class="text-[10px] text-slate-500">VIP design</p></div></div>
+      <div class="glass rounded-2xl p-3 flex items-center gap-2.5 hover:bg-white/[0.08] transition"><div class="w-9 h-9 shrink-0 rounded-xl bg-green-400/15 border border-green-400/20 flex items-center justify-center"><i data-lucide="shield-check" class="w-4.5 h-4.5 text-green-300"></i></div><div><p class="text-xs font-bold">Easy Access</p><p class="text-[10px] text-slate-500">No hassle</p></div></div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="glass-strong rounded-2xl px-4 py-3 grid grid-cols-4 gap-2 text-center">
+      <div><p class="font-orbit font-black text-sm sm:text-lg text-cyan-300">50K+</p><p class="text-[9px] sm:text-[10px] text-slate-500 font-bold tracking-wider">DOWNLOADS</p></div>
+      <div><p class="font-orbit font-black text-sm sm:text-lg text-amber-300">4.9/5</p><p class="text-[9px] sm:text-[10px] text-slate-500 font-bold tracking-wider">RATING</p></div>
+      <div><p class="font-orbit font-black text-sm sm:text-lg text-green-400">18ms</p><p class="text-[9px] sm:text-[10px] text-slate-500 font-bold tracking-wider">INDIA PING</p></div>
+      <div><p class="font-orbit font-black text-sm sm:text-lg text-violet-300">99.9%</p><p class="text-[9px] sm:text-[10px] text-slate-500 font-bold tracking-wider">UPTIME</p></div>
+    </div>
+
+    <div class="h-1"></div>
+  </section>
+</main>
+
+<!-- TOAST -->
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] bg-white text-slate-950 font-bold text-sm px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300 translate-y-3 max-w-[92vw]">
+  <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600 shrink-0"></i><span id="toastText">Done</span>
 </div>
-</div>
-<div id="toast" style="position:fixed;left:50%;bottom:22px;z-index:70;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#0F1A2C;border:1px solid rgba(34,197,94,.6);border-radius:16px;padding:12px 18px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:9px;max-width:92vw"><span style="color:#34D399">✔</span><span id="toastMsg">Done!</span></div>
+
 <script>
 lucide.createIcons();
-const CANON='https://sujitssr1-cmdsujit.github.io/gamer/';
-function tickClock(){const n=new Date();const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(n);const d=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',day:'2-digit',month:'short'}).format(n);document.getElementById('indiaClock').textContent=t;document.getElementById('indiaDate').textContent=d.toUpperCase()+' • IST';}
-tickClock();setInterval(tickClock,1000);
-let tt;function toast(m){const e=document.getElementById('toast');document.getElementById('toastMsg').textContent=m;e.style.opacity='1';e.style.transform='translate(-50%,0)';clearTimeout(tt);tt=setTimeout(()=>{e.style.opacity='0';e.style.transform='translate(-50%,20px)'},3200);}
-const items=['OB55 VIP PROXY SERVER','NEW PREMIUM LIVE','RATING 4.9 / 5','VIDEO AUTO PLAY','FAST INDIA SERVER','INSTALL NOW','1,48,920+ INSTALLS'];
-const tH=items.map(x=>`<span style="display:flex;gap:28px"><span>${x}</span><span>★</span></span>`).join('');tickerA.innerHTML=tH;tickerB.innerHTML=tH;
-const fmtIN=n=>n.toLocaleString('en-IN');let users=12847,dl=148920,rv=38412;
-const $t=(id,val)=>{const e=document.getElementById(id);if(e)e.textContent=val;};
-setInterval(()=>{users=Math.max(9000,users+Math.round((Math.random()-.42)*80));dl+=Math.floor(Math.random()*4);if(Math.random()>.6)rv++;$t('statUsers',fmtIN(users));$t('statDownloads',fmtIN(dl));$t('reviewCount',(rv/1000).toFixed(1)+'K reviews');$t('statPing',14+Math.floor(Math.random()*14));},2600);
-function wishlist(b){const s=b.querySelector('span');const on=s.textContent.trim()!=='Wishlisted';s.textContent=on?'Wishlisted':'Add to wishlist';toast(on?'❤️ Wishlist me add ho gaya!':'Wishlist se hata diya');}
-/* PREMIUM WEBSITE LOGO (favicon): asli logo ko alag premium color + gradient frame ke saath draw karke tab icon bana deta hai */
-(function makeFavicon(){const im=new Image();im.crossOrigin='anonymous';im.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d');const rr=(X,Y,W,H,R)=>{x.beginPath();x.moveTo(X+R,Y);x.arcTo(X+W,Y,X+W,Y+H,R);x.arcTo(X+W,Y+H,X,Y+H,R);x.arcTo(X,Y+H,X,Y,R);x.arcTo(X,Y,X+W,Y,R);x.closePath();};const g=x.createLinearGradient(0,0,128,128);g.addColorStop(0,'#FFD166');g.addColorStop(.5,'#A855F7');g.addColorStop(1,'#22D3EE');rr(0,0,128,128,34);x.fillStyle=g;x.fill();x.save();rr(7,7,114,114,30);x.clip();x.fillStyle='#0B0F1A';x.fillRect(0,0,128,128);x.filter='hue-rotate(195deg) saturate(1.4) contrast(1.08) brightness(1.06)';x.drawImage(im,7,7,114,114);x.filter='none';const gl=x.createLinearGradient(0,0,0,72);gl.addColorStop(0,'rgba(255,255,255,.34)');gl.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=gl;x.fillRect(0,0,128,72);x.restore();const url=c.toDataURL('image/png');document.querySelectorAll('link[rel~="icon"],link[rel="apple-touch-icon"]').forEach(l=>{l.href=url;l.type='image/png';});}catch(e){}};im.src='https://raw.githubusercontent.com/sujitssr1-cmdsujit/gamer/refs/heads/main/logo.png';})();
 
-/* ===== VIDEO: link khulte hi AUDIO ke saath AUTO-PLAY, kabhi rukegi nahi, koi play/pause/mute button nahi ===== */
-const v=document.getElementById('promoVideo'),wrap=document.getElementById('playerWrap'),seek=document.getElementById('seek');
-let seeking=false, soundOK=false, userMuted=false;
-const sfab=document.getElementById('soundFab'),volTxt=document.getElementById('volTxt');
-function updateSoundBtn(){const on=!v.muted;sfab.classList.toggle('on',on);sfab.classList.toggle('off',!on);volTxt.textContent=on?'SOUND ON':'SOUND OFF';}
-function toggleSound(e){e.preventDefault();e.stopPropagation();if(v.muted){userMuted=false;soundOK=true;v.muted=false;v.volume=1;v.play().catch(()=>{});toast('🔊 Sound ON');}else{userMuted=true;v.muted=true;toast('🔇 Sound OFF');}updateSoundBtn();}
-v.addEventListener('volumechange',updateSoundBtn);
-function setBar(){if(v.duration>0&&!seeking){const p=(v.currentTime/v.duration)*100;seek.value=p;seek.style.setProperty('--p',p+'%');}}
-function keepPlaying(){if(v.readyState>0&&v.paused&&!document.hidden){v.play().catch(()=>{});}}
-/* Browser agar sound wali autoplay roke to video mute me turant chalu + user ke PEHLE touch/scroll par sound apne aap ON (bina kisi button ke) */
-function unlockSound(e){if(soundOK||userMuted)return;if(e&&e.target&&e.target.closest&&e.target.closest('#soundFab'))return;v.muted=false;v.volume=1;v.play().then(()=>{soundOK=true;wrap.classList.add('playing');updateSoundBtn();}).catch(()=>{});}
-['pointerdown','touchstart','touchend','click','keydown','wheel','scroll'].forEach(ev=>document.addEventListener(ev,unlockSound,{passive:true,capture:true}));
-async function startVideo(){
-  try{ v.muted=false; v.volume=1; await v.play(); soundOK=true; }       /* 1) seedha sound ke saath */
-  catch(e){ if(e&&e.name==='NotSupportedError'){showErr();return;}
-    try{ v.muted=true; await v.play(); }catch(e2){} }                     /* 2) roka gaya -> mute se chalu, pehle touch par sound ON */
-  wrap.classList.add('playing'); updateSoundBtn();
+/* ---------- INDIA LIVE CLOCK ---------- */
+function updateIndiaClock(){
+  const now = new Date();
+  const time = new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(now);
+  const date = new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(now);
+  document.getElementById('indiaClock').textContent = time.toUpperCase();
+  document.getElementById('indiaDate').textContent = date;
 }
-function goFullscreen(){unlockSound();if(wrap.requestFullscreen)wrap.requestFullscreen().catch(()=>{});else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}
-function showErr(){videoError.style.display='grid';}
-/* VIDEO KE ASLI RATIO par box set: jitna video, utna hi box — upar-niche black space nahi */
-function fitRatio(){if(v.videoWidth&&v.videoHeight){const r=v.videoWidth/v.videoHeight;wrap.style.setProperty('--vr',r.toFixed(4));document.documentElement.style.setProperty('--vr',r.toFixed(4));}}
-v.addEventListener('loadedmetadata',()=>{videoError.style.display='none';fitRatio();});
-v.addEventListener('resize',fitRatio);
-v.addEventListener('canplay',()=>{videoError.style.display='none';keepPlaying();});
-v.addEventListener('timeupdate',setBar);
-/* slider se aage-peeche: ungli uthate hi wahi se video chalti rahegi */
-seek.addEventListener('input',()=>{seeking=true;seek.style.setProperty('--p',seek.value+'%');if(isFinite(v.duration))v.currentTime=(seek.value/100)*v.duration;});
-['change','pointerup','touchend','mouseup'].forEach(ev=>seek.addEventListener(ev,()=>{seeking=false;keepPlaying();},{passive:true}));
-/* kabhi pause na ho */
-v.addEventListener('pause',()=>{if(!v.ended&&!document.hidden)setTimeout(keepPlaying,120);});
-v.addEventListener('ended',()=>{v.currentTime=0;keepPlaying();});
-v.addEventListener('playing',()=>wrap.classList.add('playing'));
-v.addEventListener('error',e=>{const s=v.querySelectorAll('source');if((e.target===v||e.target===s[s.length-1])&&v.readyState===0)showErr();},true);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)keepPlaying();});
-window.addEventListener('pageshow',keepPlaying);window.addEventListener('focus',keepPlaying);
-setInterval(keepPlaying,1500);
-startVideo();window.addEventListener('load',()=>{if(v.paused)startVideo();});
-setTimeout(()=>{if(v.readyState===0&&v.networkState===3)showErr();},7000);
+updateIndiaClock();
+setInterval(updateIndiaClock,1000);
 
-/* ===== LIVE ACTIVITY FEED (bachi hui jagah me, jitni jagah utne items) ===== */
-const fNames=['Arjun • Delhi','Rohan • Mumbai','Sneha • Pune','Vikram • Jaipur','Kabir • Lucknow','Ananya • Kolkata','Rahul • Patna','Dev • Hyderabad','Ishaan • Indore','Priya • Surat','Aman • Nagpur','Yash • Ahmedabad','Sahil • Bhopal','Riya • Ranchi'];
-const fActs=[['ne VIP server connect kiya','#34D399'],['ne video guide complete ki','#00D9FF'],['ne INSTALL NOW se download kiya','#22C55E'],['ko 18ms ping mila — Mumbai node','#34D399'],['ne 5-star rating di ★★★★★','#FFC531'],['ne OB55 VIP activate kiya','#22C55E']];
-const fList=document.getElementById('feedList');
-function feedMax(){const h=fList.clientHeight;return Math.max(0,Math.floor((h-10)/36));}
-function addFeed(){
-  const max=feedMax(); if(max===0){fList.innerHTML='';return;}
-  const n=fNames[Math.floor(Math.random()*fNames.length)],a=fActs[Math.floor(Math.random()*fActs.length)];
-  const t=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
-  const d=document.createElement('div');d.className='feed-item';
-  d.innerHTML=`<span class="feed-av" style="background:${a[1]}">${n[0]}</span><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><b>${n}</b> ${a[0]}</span><span class="feed-time">${t}</span>`;
-  fList.prepend(d); while(fList.children.length>max) fList.removeChild(fList.lastChild);
+/* ---------- TOAST ---------- */
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastText').textContent=msg;
+  t.classList.remove('opacity-0','pointer-events-none','translate-y-3');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.add('opacity-0','pointer-events-none','translate-y-3'),3000);
 }
-function feedTrim(){const max=feedMax();while(fList.children.length>max)fList.removeChild(fList.lastChild);if(fList.children.length<max)addFeed();}
-setTimeout(()=>{for(let i=0;i<feedMax();i++)addFeed();},300);
-setInterval(addFeed,3800);window.addEventListener('resize',feedTrim);
-setInterval(()=>{const e=document.getElementById('feedOnline');if(e)e.textContent=fmtIN(users);},2600);
 
-async function shareSite(){const url=location.protocol.startsWith('http')?location.href:CANON;const d={title:'OB55 VIP PROXY SERVER',text:'OB55 VIP Proxy Server — Premium Video Guide • Rating 4.9/5 • INSTALL NOW',url};if(navigator.share){try{await navigator.share(d);}catch(e){}}else{try{await navigator.clipboard.writeText(url);toast('Link copy ho gaya! Share karne par OB55 logo dikhega.');}catch(e){toast('Link: '+url);}}}
-function downloadHTML(){const h='<!DOCTYPE html>\n'+document.documentElement.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='index.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);toast('index.html download ho gayi! GitHub me promo.mp4 + logo.png ke saath upload karo.');}
-lucide.createIcons();
+/* ---------- 1-CLICK DOWNLOAD index.html ---------- */
+function downloadHTML(){
+  const clone=document.documentElement.cloneNode(true);
+  clone.querySelectorAll('#toast').forEach(el=>el.remove());
+  const fb=clone.querySelector('#videoFallback');
+  if(fb){ fb.classList.add('hidden'); fb.classList.remove('flex'); }
+  const html='<!DOCTYPE html>\n'+clone.outerHTML;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='index.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  showToast('index.html download ho gaya — GitHub par upload karo');
+}
+document.querySelectorAll('.download-html-btn').forEach(btn=>btn.addEventListener('click',downloadHTML));
+
+/* ---------- INSTALL LINK ---------- */
+document.querySelectorAll('.play-install').forEach(link=>{
+  link.addEventListener('click',()=>showToast('Opening fast download link...'));
+});
+
+/* ---------- SHARE ---------- */
+const shareBtn=document.getElementById('shareBtn');
+if(shareBtn){
+  shareBtn.addEventListener('click',async()=>{
+    const data={title:'OB55 VIP PROXY SERVER',text:'OB55 VIP Proxy Server — Watch video guide & Install Now',url:location.href};
+    if(navigator.share){ try{ await navigator.share(data); }catch(e){} }
+    else{
+      try{ await navigator.clipboard.writeText(location.href); showToast('Link copy ho gaya — ab share karo'); }
+      catch(e){ showToast('Browser se link copy karke share karo'); }
+    }
+  });
+}
+
+/* ---------- VIDEO : AUTOPLAY WITH SOUND ---------- */
+const video=document.getElementById('promoVideo');
+const seek=document.getElementById('videoSeek');
+const soundBtn=document.getElementById('soundBtn');
+const soundIcon=document.getElementById('soundIcon');
+const soundLabel=document.getElementById('soundLabel');
+
+function setSoundUI(on){
+  if(on){
+    soundIcon.setAttribute('data-lucide','volume-2');
+    soundLabel.textContent='SOUND ON';
+    soundBtn.classList.add('!bg-green-600/80');
+  }else{
+    soundIcon.setAttribute('data-lucide','volume-x');
+    soundLabel.textContent='SOUND OFF';
+    soundBtn.classList.remove('!bg-green-600/80');
+  }
+  lucide.createIcons();
+}
+
+function playWithSound(){
+  video.muted=false;
+  video.volume=1;
+  const p=video.play();
+  if(p){
+    p.then(()=>{ setSoundUI(true); }).catch(()=>{
+      video.muted=true;
+      video.play().catch(()=>{});
+      setSoundUI(false);
+    });
+  }
+}
+
+/* Multiple retries — sound ke saath autoplay try karo */
+let soundRetryCount=0;
+function tryAutoplayWithRetry(){
+  playWithSound();
+  soundRetryCount++;
+  if(soundRetryCount<3){
+    setTimeout(()=>{ if(video.paused||video.muted) tryAutoplayWithRetry(); },800);
+  }
+}
+tryAutoplayWithRetry();
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden && video.paused) playWithSound(); });
+
+/* Pehli baar user tap kare toh sound ON kar do (browser policy) */
+let soundEnabled=false;
+function enableSoundOnInteraction(e){
+  if(soundEnabled) return;
+  /* Agar sound button par click hua toh wahan kuch mat karo — uska apna handler hai */
+  if(e && e.target && e.target.closest && e.target.closest('#soundBtn')) return;
+  soundEnabled=true;
+  video.muted=false;
+  video.volume=1;
+  if(video.paused){ video.play().then(()=>setSoundUI(true)).catch(()=>{}); }
+  else{ setSoundUI(true); }
+}
+document.addEventListener('click',enableSoundOnInteraction);
+document.addEventListener('touchstart',enableSoundOnInteraction);
+document.addEventListener('keydown',enableSoundOnInteraction);
+
+/* SOUND TOGGLE — always visible button */
+soundBtn.addEventListener('click',()=>{
+  if(video.muted){
+    video.muted=false; video.volume=1; soundEnabled=true;
+    if(video.paused) video.play().catch(()=>{});
+    setSoundUI(true);
+    showToast('Video sound ON ho gaya');
+  }else{
+    video.muted=true;
+    setSoundUI(false);
+    showToast('Video sound OFF');
+  }
+});
+
+/* CUSTOM PROGRESS SLIDER */
+let scrubbing=false;
+video.addEventListener('timeupdate',()=>{
+  if(!scrubbing && video.duration){
+    seek.value=(video.currentTime/video.duration)*100;
+  }
+});
+seek.addEventListener('input',()=>{
+  scrubbing=true;
+  if(video.duration){ video.currentTime=(seek.value/100)*video.duration; }
+});
+seek.addEventListener('change',()=>{ scrubbing=false; });
+
+/* VIDEO RATIO MATCH */
+const videoSection=document.getElementById('videoSection');
+function matchVideoRatio(){
+  if(video.videoWidth && video.videoHeight){
+    const r=video.videoWidth/video.videoHeight;
+    videoSection.style.aspectRatio=r;
+  }
+}
+video.addEventListener('loadedmetadata',matchVideoRatio);
+if(video.readyState>=1) matchVideoRatio();
+
+/* VIDEO FALLBACK */
+function showVideoFallback(){
+  const fb=document.getElementById('videoFallback');
+  fb.classList.remove('hidden'); fb.classList.add('flex');
+  const slider=document.getElementById('videoSeek');
+  if(slider) slider.parentElement.style.display='none';
+}
+video.addEventListener('error',showVideoFallback,true);
+const srcEl=video.querySelector('source');
+if(srcEl) srcEl.addEventListener('error',showVideoFallback);
+
+/* ---------- LIVE ONLINE USERS ---------- */
+let heroUsers=24815;
+setInterval(()=>{
+  heroUsers=Math.max(23000,heroUsers+Math.floor(Math.random()*61)-28);
+  const el=document.getElementById('heroUsers');
+  if(el) el.textContent=heroUsers.toLocaleString('en-IN');
+},3000);
 </script>
 </body>
 </html>
